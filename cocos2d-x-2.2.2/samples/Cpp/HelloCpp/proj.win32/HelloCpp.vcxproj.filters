@@ -1,0 +1,281 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Classes">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="win32">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Classes\mini_hammer_Adapt">
+      <UniqueIdentifier>{d7cd1ba1-1edc-4036-a2f4-6b136d9109de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\mini_hammer_Adapt\Common">
+      <UniqueIdentifier>{d366b080-4312-4d2f-b384-d84a66800ea3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\mini_hammer_Adapt\Common\AI">
+      <UniqueIdentifier>{f3cc7725-21c9-4790-890d-0cfb1ed512b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\mini_hammer_Adapt\Common\Armory">
+      <UniqueIdentifier>{c7b1187d-4e5b-4714-8af0-617c6f0de915}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\mini_hammer_Adapt\Common\Game">
+      <UniqueIdentifier>{65ce2ccf-b5a0-46a9-8629-96f7efdd6641}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\mini_hammer_Adapt\Common\Time">
+      <UniqueIdentifier>{575ca25f-ea07-416d-bc1d-12f0dbd58347}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\mini_hammer_Adapt\Common\Triggers">
+      <UniqueIdentifier>{955d83c4-937e-46a1-b557-1d3c44597dbd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\mini_hammer_Adapt\Common\AI\goals">
+      <UniqueIdentifier>{4f30c717-18b9-4521-9154-e414663c881a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\mini_hammer_Adapt\Common\Armory\Goods">
+      <UniqueIdentifier>{fea294cf-b444-49fd-861c-fa28b11e302c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\mini_hammer_Adapt\Common\Armory\Projectiles">
+      <UniqueIdentifier>{e0e767bf-02b4-4f10-b4b5-45d2c99e1ce9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\mini_hammer_Adapt\Common\Armory\Weapons">
+      <UniqueIdentifier>{984cd480-762c-48a9-ba66-8ba2dfea08bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\mini_hammer_Adapt\Common\misc">
+      <UniqueIdentifier>{11b4cd11-582c-4ee1-aa6e-b2b20b0434e2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Classes\AppDelegate.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\HelloWorldScene.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\mini_hammer\Common\Game\GameWorld.cpp">
+      <Filter>Classes\mini_hammer_Adapt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\mini_hammer\Common\AI\goals\Goal.cpp">
+      <Filter>Classes\mini_hammer_Adapt\Common\AI\goals</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\mini_hammer\Common\AI\goals\Goal_SeekToPosition.cpp">
+      <Filter>Classes\mini_hammer_Adapt\Common\AI\goals</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\mini_hammer\Common\Armory\Goods\Goods.cpp">
+      <Filter>Classes\mini_hammer_Adapt\Common\Armory\Goods</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\mini_hammer\Common\Armory\Weapons\Weapon.cpp">
+      <Filter>Classes\mini_hammer_Adapt\Common\Armory\Weapons</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\mini_hammer\Common\Armory\Weapons\WeaponSystem.cpp">
+      <Filter>Classes\mini_hammer_Adapt\Common\Armory\Weapons</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\mini_hammer\Common\Armory\Projectiles\Projectile.cpp">
+      <Filter>Classes\mini_hammer_Adapt\Common\Armory\Projectiles</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\mini_hammer\Common\Armory\Projectiles\Projectile_Rocket.cpp">
+      <Filter>Classes\mini_hammer_Adapt\Common\Armory\Projectiles</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\mini_hammer\Common\Game\BaseEntity.cpp">
+      <Filter>Classes\mini_hammer_Adapt\Common\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\mini_hammer\Common\Game\MovingEntity.cpp">
+      <Filter>Classes\mini_hammer_Adapt\Common\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\mini_hammer\Common\Game\SteeringBehaviors.cpp">
+      <Filter>Classes\mini_hammer_Adapt\Common\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\mini_hammer\Common\Game\Vehicle.cpp">
+      <Filter>Classes\mini_hammer_Adapt\Common\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\mini_hammer\Common\Triggers\Trigger_HealthGiver.cpp">
+      <Filter>Classes\mini_hammer_Adapt\Common\Triggers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\mini_hammer\Common\Triggers\Trigger_WeaponGiver.cpp">
+      <Filter>Classes\mini_hammer_Adapt\Common\Triggers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\mini_hammer\Common\Triggers\TriggerSystem.cpp">
+      <Filter>Classes\mini_hammer_Adapt\Common\Triggers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\mini_hammer\Common\Time\CrudeTimer.cpp">
+      <Filter>Classes\mini_hammer_Adapt\Common\Time</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\mini_hammer\Common\Time\PrecisionTimer.cpp">
+      <Filter>Classes\mini_hammer_Adapt\Common\Time</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\mini_hammer\Common\Time\Regulator.cpp">
+      <Filter>Classes\mini_hammer_Adapt\Common\Time</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\mini_hammer\Common\GlobalVar.cpp">
+      <Filter>Classes\mini_hammer_Adapt\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\mini_hammer\mini_hammer\Graph.cpp">
+      <Filter>Classes\mini_hammer_Adapt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\mini_hammer\mini_hammer\GraphAlgorithms.cpp">
+      <Filter>Classes\mini_hammer_Adapt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\mini_hammer\mini_hammer\GraphEdge.cpp">
+      <Filter>Classes\mini_hammer_Adapt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\mini_hammer\mini_hammer\GraphNode.cpp">
+      <Filter>Classes\mini_hammer_Adapt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\mini_hammer\mini_hammer\Pathfinder.cpp">
+      <Filter>Classes\mini_hammer_Adapt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\mini_hammer\Common\misc\Cgdi.cpp">
+      <Filter>Classes\mini_hammer_Adapt\Common\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\mini_hammer\Common\misc\FrameCounter.cpp">
+      <Filter>Classes\mini_hammer_Adapt\Common\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\mini_hammer\Common\misc\iniFileLoaderBase.cpp">
+      <Filter>Classes\mini_hammer_Adapt\Common\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\mini_hammer\Common\misc\WindowUtils.cpp">
+      <Filter>Classes\mini_hammer_Adapt\Common\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\mini_hammer\Common\AI\goals\Goal_Composite.cpp">
+      <Filter>Classes\mini_hammer_Adapt\Common\AI\goals</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\mini_hammer\Common\AI\goals\Goal_Think.cpp">
+      <Filter>Classes\mini_hammer_Adapt\Common\AI\goals</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Classes\AppDelegate.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\HelloWorldScene.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="main.h">
+      <Filter>win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\AppMacros.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\mini_hammer\Common\Game\GameWorld.h">
+      <Filter>Classes\mini_hammer_Adapt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\mini_hammer\Common\AI\goals\Goal.h">
+      <Filter>Classes\mini_hammer_Adapt\Common\AI\goals</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\mini_hammer\Common\AI\goals\Goal_SeekToPosition.h">
+      <Filter>Classes\mini_hammer_Adapt\Common\AI\goals</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\mini_hammer\Common\Armory\Goods\Goods.h">
+      <Filter>Classes\mini_hammer_Adapt\Common\Armory\Goods</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\mini_hammer\Common\Armory\Weapons\Weapon.h">
+      <Filter>Classes\mini_hammer_Adapt\Common\Armory\Weapons</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\mini_hammer\Common\Armory\Weapons\WeaponSystem.h">
+      <Filter>Classes\mini_hammer_Adapt\Common\Armory\Weapons</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\mini_hammer\Common\Armory\Projectiles\Projectile.h">
+      <Filter>Classes\mini_hammer_Adapt\Common\Armory\Projectiles</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\mini_hammer\Common\Armory\Projectiles\Projectile_Rocket.h">
+      <Filter>Classes\mini_hammer_Adapt\Common\Armory\Projectiles</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\mini_hammer\Common\Game\BaseEntity.h">
+      <Filter>Classes\mini_hammer_Adapt\Common\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\mini_hammer\Common\Game\MovingEntity.h">
+      <Filter>Classes\mini_hammer_Adapt\Common\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\mini_hammer\Common\Game\SteeringBehaviors.h">
+      <Filter>Classes\mini_hammer_Adapt\Common\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\mini_hammer\Common\Game\Vehicle.h">
+      <Filter>Classes\mini_hammer_Adapt\Common\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\mini_hammer\Common\Triggers\Trigger.h">
+      <Filter>Classes\mini_hammer_Adapt\Common\Triggers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\mini_hammer\Common\Triggers\Trigger_HealthGiver.h">
+      <Filter>Classes\mini_hammer_Adapt\Common\Triggers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\mini_hammer\Common\Triggers\Trigger_WeaponGiver.h">
+      <Filter>Classes\mini_hammer_Adapt\Common\Triggers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\mini_hammer\Common\Triggers\TriggerSystem.h">
+      <Filter>Classes\mini_hammer_Adapt\Common\Triggers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\mini_hammer\Common\Time\CrudeTimer.h">
+      <Filter>Classes\mini_hammer_Adapt\Common\Time</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\mini_hammer\Common\Time\PrecisionTimer.h">
+      <Filter>Classes\mini_hammer_Adapt\Common\Time</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\mini_hammer\Common\Time\Regulator.h">
+      <Filter>Classes\mini_hammer_Adapt\Common\Time</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\mini_hammer\Common\GlobalVar.h">
+      <Filter>Classes\mini_hammer_Adapt\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\mini_hammer\mini_hammer\Graph.h">
+      <Filter>Classes\mini_hammer_Adapt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\mini_hammer\mini_hammer\GraphAlgorithms.h">
+      <Filter>Classes\mini_hammer_Adapt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\mini_hammer\mini_hammer\GraphEdge.h">
+      <Filter>Classes\mini_hammer_Adapt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\mini_hammer\mini_hammer\GraphNode.h">
+      <Filter>Classes\mini_hammer_Adapt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\mini_hammer\mini_hammer\Pathfinder.h">
+      <Filter>Classes\mini_hammer_Adapt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\mini_hammer\Common\misc\autolist.h">
+      <Filter>Classes\mini_hammer_Adapt\Common\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\mini_hammer\Common\misc\CellSpacePartition.h">
+      <Filter>Classes\mini_hammer_Adapt\Common\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\mini_hammer\Common\misc\Cgdi.h">
+      <Filter>Classes\mini_hammer_Adapt\Common\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\mini_hammer\Common\misc\ConsoleUtils.h">
+      <Filter>Classes\mini_hammer_Adapt\Common\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\mini_hammer\Common\misc\FrameCounter.h">
+      <Filter>Classes\mini_hammer_Adapt\Common\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\mini_hammer\Common\misc\iniFileLoaderBase.h">
+      <Filter>Classes\mini_hammer_Adapt\Common\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\mini_hammer\Common\misc\PriorityQueue.h">
+      <Filter>Classes\mini_hammer_Adapt\Common\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\mini_hammer\Common\misc\Smoother.h">
+      <Filter>Classes\mini_hammer_Adapt\Common\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\mini_hammer\Common\misc\Stream_Utility_Functions.h">
+      <Filter>Classes\mini_hammer_Adapt\Common\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\mini_hammer\Common\misc\TypeToString.h">
+      <Filter>Classes\mini_hammer_Adapt\Common\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\mini_hammer\Common\misc\utils.h">
+      <Filter>Classes\mini_hammer_Adapt\Common\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\mini_hammer\Common\misc\WindowUtils.h">
+      <Filter>Classes\mini_hammer_Adapt\Common\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\mini_hammer\Common\AI\goals\Goal_Composite.h">
+      <Filter>Classes\mini_hammer_Adapt\Common\AI\goals</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\mini_hammer\Common\AI\goals\Goal_Think.h">
+      <Filter>Classes\mini_hammer_Adapt\Common\AI\goals</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

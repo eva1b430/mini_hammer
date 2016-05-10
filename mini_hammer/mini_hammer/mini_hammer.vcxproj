@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{B0331EDA-BD1F-431C-A9E8-E8DBC482D821}</ProjectGuid>
+    <RootNamespace>mini_hammer</RootNamespace>
+    <Keyword>MFCProj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>./;../Common;../Common/Armory/Goods;../Common/Armory/Projectiles;../Common/Armory/Weapons;../Common/Time;../Common/AI;../Common/AI/goals;../Common/Triggers;../Common/Game;../cocos2dx;../../cocos2d-x-2.2.2/cocos2dx;../../cocos2d-x-2.2.2/cocos2dx\include;../../cocos2d-x-2.2.2/cocos2dx\kazmath\include;../../cocos2d-x-2.2.2/cocos2dx\platform\win32;../../cocos2d-x-2.2.2/cocos2dx\platform\third_party\win32\OGLES;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>Nafxcwd.lib;Libcmtd.lib;opengl32.lib;glew32.lib;libcocos2d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>Nafxcwd.lib;Libcmtd.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <AdditionalLibraryDirectories>../../cocos2d-x-2.2.2/Debug.win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+    <None Include="res\mini_hammer.ico" />
+    <None Include="res\mini_hammer.rc2" />
+    <None Include="res\mini_hammerDoc.ico" />
+    <None Include="res\Toolbar.bmp" />
+    <None Include="res\toolbar1.bmp" />
+    <None Include="res\Toolbar256.bmp" />
+    <None Include="UserImages.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\cocos2dx\AppDelegate.h" />
+    <ClInclude Include="..\cocos2dx\AppMacros.h" />
+    <ClInclude Include="..\cocos2dx\EditLayer.h" />
+    <ClInclude Include="..\cocos2dx\SimulationLayer.h" />
+    <ClInclude Include="..\Common\2D\C2DMatrix.h" />
+    <ClInclude Include="..\Common\2D\Vector2D.h" />
+    <ClInclude Include="..\Common\AI\goals\Goal.h" />
+    <ClInclude Include="..\Common\AI\goals\Goal_Composite.h" />
+    <ClInclude Include="..\Common\AI\goals\Goal_Explore.h" />
+    <ClInclude Include="..\Common\AI\goals\Goal_FollowPath.h" />
+    <ClInclude Include="..\Common\AI\goals\Goal_SeekToPosition.h" />
+    <ClInclude Include="..\Common\AI\goals\Goal_Think.h" />
+    <ClInclude Include="..\Common\Armory\Goods\Goods.h" />
+    <ClInclude Include="..\Common\Armory\Projectiles\Projectile.h" />
+    <ClInclude Include="..\Common\Armory\Projectiles\Projectile_Rocket.h" />
+    <ClInclude Include="..\Common\Armory\Weapons\Weapon.h" />
+    <ClInclude Include="..\Common\Armory\Weapons\WeaponSystem.h" />
+    <ClInclude Include="..\Common\Game\BaseEntity.h" />
+    <ClInclude Include="..\Common\Game\GameWorld.h" />
+    <ClInclude Include="..\Common\Game\MovingEntity.h" />
+    <ClInclude Include="..\Common\Game\SteeringBehaviors.h" />
+    <ClInclude Include="..\Common\Game\Vehicle.h" />
+    <ClInclude Include="..\Common\GlobalVar.h" />
+    <ClInclude Include="..\Common\misc\Cgdi.h" />
+    <ClInclude Include="..\Common\Time\Regulator.h" />
+    <ClInclude Include="..\Common\Triggers\Trigger.h" />
+    <ClInclude Include="..\Common\Triggers\TriggerSystem.h" />
+    <ClInclude Include="..\Common\Triggers\Trigger_HealthGiver.h" />
+    <ClInclude Include="..\Common\Triggers\Trigger_WeaponGiver.h" />
+    <ClInclude Include="AIDialog.h" />
+    <ClInclude Include="Graph.h" />
+    <ClInclude Include="GraphAlgorithms.h" />
+    <ClInclude Include="GraphEdge.h" />
+    <ClInclude Include="GraphNode.h" />
+    <ClInclude Include="MainFrm.h" />
+    <ClInclude Include="memdc.h" />
+    <ClInclude Include="mini_hammer.h" />
+    <ClInclude Include="mini_hammerDoc.h" />
+    <ClInclude Include="mini_hammerView.h" />
+    <ClInclude Include="Pathfinder.h" />
+    <ClInclude Include="ProjectileDialog.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="ValueSetDialog.h" />
+    <ClInclude Include="VehicleDialog.h" />
+    <ClInclude Include="WeaponDialog.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\cocos2dx\AppDelegate.cpp" />
+    <ClCompile Include="..\cocos2dx\EditLayer.cpp" />
+    <ClCompile Include="..\cocos2dx\SimulationLayer.cpp" />
+    <ClCompile Include="..\Common\2D\Vector2d.cpp" />
+    <ClCompile Include="..\Common\AI\goals\Goal.cpp" />
+    <ClCompile Include="..\Common\AI\goals\Goal_Composite.cpp" />
+    <ClCompile Include="..\Common\AI\goals\Goal_Explore.cpp" />
+    <ClCompile Include="..\Common\AI\goals\Goal_FollowPath.cpp" />
+    <ClCompile Include="..\Common\AI\goals\Goal_SeekToPosition.cpp" />
+    <ClCompile Include="..\Common\AI\goals\Goal_Think.cpp" />
+    <ClCompile Include="..\Common\Armory\Goods\Goods.cpp" />
+    <ClCompile Include="..\Common\Armory\Projectiles\Projectile.cpp" />
+    <ClCompile Include="..\Common\Armory\Projectiles\Projectile_Rocket.cpp" />
+    <ClCompile Include="..\Common\Armory\Weapons\Weapon.cpp" />
+    <ClCompile Include="..\Common\Armory\Weapons\WeaponSystem.cpp" />
+    <ClCompile Include="..\Common\Game\BaseEntity.cpp" />
+    <ClCompile Include="..\Common\Game\GameWorld.cpp" />
+    <ClCompile Include="..\Common\Game\MovingEntity.cpp" />
+    <ClCompile Include="..\Common\Game\SteeringBehaviors.cpp" />
+    <ClCompile Include="..\Common\Game\Vehicle.cpp" />
+    <ClCompile Include="..\Common\GlobalVar.cpp" />
+    <ClCompile Include="..\Common\misc\Cgdi.cpp" />
+    <ClCompile Include="..\Common\Time\Regulator.cpp" />
+    <ClCompile Include="..\Common\Triggers\TriggerSystem.cpp" />
+    <ClCompile Include="..\Common\Triggers\Trigger_HealthGiver.cpp" />
+    <ClCompile Include="..\Common\Triggers\Trigger_WeaponGiver.cpp" />
+    <ClCompile Include="AIDialog.cpp" />
+    <ClCompile Include="Graph.cpp" />
+    <ClCompile Include="GraphAlgorithms.cpp" />
+    <ClCompile Include="GraphEdge.cpp" />
+    <ClCompile Include="GraphNode.cpp" />
+    <ClCompile Include="MainFrm.cpp" />
+    <ClCompile Include="mini_hammer.cpp" />
+    <ClCompile Include="mini_hammerDoc.cpp" />
+    <ClCompile Include="mini_hammerView.cpp" />
+    <ClCompile Include="Pathfinder.cpp" />
+    <ClCompile Include="ProjectileDialog.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="ValueSetDialog.cpp" />
+    <ClCompile Include="VehicleDialog.cpp" />
+    <ClCompile Include="WeaponDialog.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="mini_hammer.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="mini_hammer.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

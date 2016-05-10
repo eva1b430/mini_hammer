@@ -1,0 +1,356 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Common">
+      <UniqueIdentifier>{7e9d0814-4ca0-44a2-a403-f8df831744ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Triggers">
+      <UniqueIdentifier>{4a9ff781-aa93-4d8a-a758-8118c2793975}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\AI">
+      <UniqueIdentifier>{7d545f68-5357-491d-a055-947126d8b434}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\AI\goals">
+      <UniqueIdentifier>{e2882147-449a-4260-9885-500c4e97c8e9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Game">
+      <UniqueIdentifier>{48216458-ab79-42bb-b26c-67f93a80b7ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="cocos2dx">
+      <UniqueIdentifier>{53a35ba1-3da1-45b4-a531-506b26253482}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Armory">
+      <UniqueIdentifier>{fd236369-aee5-4af1-a6bb-ccbf2b18c414}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Armory\Goods">
+      <UniqueIdentifier>{7ac9e77d-2c64-41b0-b933-b31b293c68ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Armory\Projectiles">
+      <UniqueIdentifier>{98d18374-1aa5-46b4-822f-cbff3b614022}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Armory\Weapons">
+      <UniqueIdentifier>{e9a714cc-4f1b-4b3d-933f-e8d667e0874c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Time">
+      <UniqueIdentifier>{078aa432-3fb6-46b3-a143-c4ac5ea990b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\AI\goals\composite">
+      <UniqueIdentifier>{3adb38f2-1d20-4069-b7b5-46cbcc420153}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\AI\goals\atomic">
+      <UniqueIdentifier>{d8ab85ec-37a1-408f-929d-84dd5574b599}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\AI\goals\evaluation">
+      <UniqueIdentifier>{83fe4d55-cff1-4c8d-8a17-f3f5d80402d1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+    <None Include="UserImages.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\mini_hammer.rc2">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\mini_hammerDoc.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\mini_hammer.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\Toolbar.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\Toolbar256.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\toolbar1.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="mini_hammer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MainFrm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="mini_hammerDoc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="mini_hammerView.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\2D\Vector2D.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\misc\Cgdi.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Pathfinder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Graph.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GraphNode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GraphEdge.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="memdc.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Triggers\Trigger.h">
+      <Filter>Common\Triggers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\AI\goals\Goal.h">
+      <Filter>Common\AI\goals</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Game\Vehicle.h">
+      <Filter>Common\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Game\BaseEntity.h">
+      <Filter>Common\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Game\MovingEntity.h">
+      <Filter>Common\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\2D\C2DMatrix.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Game\SteeringBehaviors.h">
+      <Filter>Common\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Game\GameWorld.h">
+      <Filter>Common\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cocos2dx\AppDelegate.h">
+      <Filter>cocos2dx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cocos2dx\AppMacros.h">
+      <Filter>cocos2dx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cocos2dx\EditLayer.h">
+      <Filter>cocos2dx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\GlobalVar.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cocos2dx\SimulationLayer.h">
+      <Filter>cocos2dx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Triggers\Trigger_WeaponGiver.h">
+      <Filter>Common\Triggers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Armory\Goods\Goods.h">
+      <Filter>Common\Armory\Goods</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Armory\Weapons\Weapon.h">
+      <Filter>Common\Armory\Weapons</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Armory\Projectiles\Projectile.h">
+      <Filter>Common\Armory\Projectiles</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Triggers\Trigger_HealthGiver.h">
+      <Filter>Common\Triggers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Triggers\TriggerSystem.h">
+      <Filter>Common\Triggers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Armory\Projectiles\Projectile_Rocket.h">
+      <Filter>Common\Armory\Projectiles</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Armory\Weapons\WeaponSystem.h">
+      <Filter>Common\Armory\Weapons</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Time\Regulator.h">
+      <Filter>Common\Time</Filter>
+    </ClInclude>
+    <ClInclude Include="GraphAlgorithms.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="VehicleDialog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WeaponDialog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ProjectileDialog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ValueSetDialog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AIDialog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\AI\goals\Goal_SeekToPosition.h">
+      <Filter>Common\AI\goals\atomic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\AI\goals\Goal_Composite.h">
+      <Filter>Common\AI\goals\composite</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\AI\goals\Goal_Think.h">
+      <Filter>Common\AI\goals\composite</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\AI\goals\Goal_Explore.h">
+      <Filter>Common\AI\goals\composite</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\AI\goals\Goal_FollowPath.h">
+      <Filter>Common\AI\goals\composite</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="mini_hammer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MainFrm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mini_hammerDoc.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mini_hammerView.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\2D\Vector2d.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\misc\Cgdi.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="Pathfinder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Graph.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GraphNode.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GraphEdge.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\AI\goals\Goal.cpp">
+      <Filter>Common\AI\goals</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Game\Vehicle.cpp">
+      <Filter>Common\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Game\BaseEntity.cpp">
+      <Filter>Common\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Game\MovingEntity.cpp">
+      <Filter>Common\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Game\SteeringBehaviors.cpp">
+      <Filter>Common\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Game\GameWorld.cpp">
+      <Filter>Common\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\cocos2dx\AppDelegate.cpp">
+      <Filter>cocos2dx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\cocos2dx\EditLayer.cpp">
+      <Filter>cocos2dx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\GlobalVar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\cocos2dx\SimulationLayer.cpp">
+      <Filter>cocos2dx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Triggers\Trigger_WeaponGiver.cpp">
+      <Filter>Common\Triggers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Armory\Goods\Goods.cpp">
+      <Filter>Common\Armory\Goods</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Armory\Weapons\Weapon.cpp">
+      <Filter>Common\Armory\Weapons</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Armory\Projectiles\Projectile.cpp">
+      <Filter>Common\Armory\Projectiles</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Triggers\Trigger_HealthGiver.cpp">
+      <Filter>Common\Triggers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Triggers\TriggerSystem.cpp">
+      <Filter>Common\Triggers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Armory\Projectiles\Projectile_Rocket.cpp">
+      <Filter>Common\Armory\Projectiles</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Armory\Weapons\WeaponSystem.cpp">
+      <Filter>Common\Armory\Weapons</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Time\Regulator.cpp">
+      <Filter>Common\Time</Filter>
+    </ClCompile>
+    <ClCompile Include="GraphAlgorithms.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="VehicleDialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WeaponDialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ProjectileDialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ValueSetDialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AIDialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\AI\goals\Goal_SeekToPosition.cpp">
+      <Filter>Common\AI\goals\atomic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\AI\goals\Goal_Composite.cpp">
+      <Filter>Common\AI\goals\composite</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\AI\goals\Goal_Think.cpp">
+      <Filter>Common\AI\goals\composite</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\AI\goals\Goal_Explore.cpp">
+      <Filter>Common\AI\goals\composite</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\AI\goals\Goal_FollowPath.cpp">
+      <Filter>Common\AI\goals\composite</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="mini_hammer.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
