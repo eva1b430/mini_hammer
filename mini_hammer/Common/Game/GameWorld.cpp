@@ -9,6 +9,7 @@ GameWorld::GameWorld(void)
 {
 	m_pPathFinder = new Pathfinder;
 	GlobalVar::instance().SetPathfinder(m_pPathFinder);
+	m_pPathFinder->CreateGraphGrid(800, 600, 10, 10);
 }
 
 

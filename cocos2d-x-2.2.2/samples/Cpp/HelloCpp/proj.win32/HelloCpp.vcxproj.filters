@@ -146,6 +146,12 @@
     <ClCompile Include="..\..\..\..\..\mini_hammer\Common\AI\goals\Goal_Think.cpp">
       <Filter>Classes\mini_hammer_Adapt\Common\AI\goals</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\..\..\mini_hammer\Common\AI\goals\Goal_Explore.cpp">
+      <Filter>Classes\mini_hammer_Adapt\Common\AI\goals</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\mini_hammer\Common\AI\goals\Goal_FollowPath.cpp">
+      <Filter>Classes\mini_hammer_Adapt\Common\AI\goals</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Classes\AppDelegate.h">
@@ -275,6 +281,12 @@
       <Filter>Classes\mini_hammer_Adapt\Common\AI\goals</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\..\..\mini_hammer\Common\AI\goals\Goal_Think.h">
+      <Filter>Classes\mini_hammer_Adapt\Common\AI\goals</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\mini_hammer\Common\AI\goals\Goal_Explore.h">
+      <Filter>Classes\mini_hammer_Adapt\Common\AI\goals</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\mini_hammer\Common\AI\goals\Goal_FollowPath.h">
       <Filter>Classes\mini_hammer_Adapt\Common\AI\goals</Filter>
     </ClInclude>
   </ItemGroup>

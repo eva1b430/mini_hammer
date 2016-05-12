@@ -125,6 +125,8 @@
   <ItemGroup>
     <ClCompile Include="..\..\..\..\..\mini_hammer\Common\AI\goals\Goal.cpp" />
     <ClCompile Include="..\..\..\..\..\mini_hammer\Common\AI\goals\Goal_Composite.cpp" />
+    <ClCompile Include="..\..\..\..\..\mini_hammer\Common\AI\goals\Goal_Explore.cpp" />
+    <ClCompile Include="..\..\..\..\..\mini_hammer\Common\AI\goals\Goal_FollowPath.cpp" />
     <ClCompile Include="..\..\..\..\..\mini_hammer\Common\AI\goals\Goal_SeekToPosition.cpp" />
     <ClCompile Include="..\..\..\..\..\mini_hammer\Common\AI\goals\Goal_Think.cpp" />
     <ClCompile Include="..\..\..\..\..\mini_hammer\Common\Armory\Goods\Goods.cpp" />
@@ -160,6 +162,8 @@
   <ItemGroup>
     <ClInclude Include="..\..\..\..\..\mini_hammer\Common\AI\goals\Goal.h" />
     <ClInclude Include="..\..\..\..\..\mini_hammer\Common\AI\goals\Goal_Composite.h" />
+    <ClInclude Include="..\..\..\..\..\mini_hammer\Common\AI\goals\Goal_Explore.h" />
+    <ClInclude Include="..\..\..\..\..\mini_hammer\Common\AI\goals\Goal_FollowPath.h" />
     <ClInclude Include="..\..\..\..\..\mini_hammer\Common\AI\goals\Goal_SeekToPosition.h" />
     <ClInclude Include="..\..\..\..\..\mini_hammer\Common\AI\goals\Goal_Think.h" />
     <ClInclude Include="..\..\..\..\..\mini_hammer\Common\Armory\Goods\Goods.h" />
