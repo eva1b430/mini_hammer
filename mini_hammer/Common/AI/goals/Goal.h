@@ -66,7 +66,10 @@ public:
 	virtual void Terminate() = 0;
 
 	// 辅助调试
-	virtual void Render(){}
+	virtual void Render(){};
+	virtual void RenderText(int& xOffset, int& yOffset);
+	// 将目标类型转换为字符串
+	std::string GetGoalName();
 
 protected:
 	void ActivateIfInactive()

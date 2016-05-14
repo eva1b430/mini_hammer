@@ -1,10 +1,4 @@
-﻿
-// mini_hammerView.cpp : implementation of the Cmini_hammerView class
-//
-
-#include "stdafx.h"
-// SHARED_HANDLERS can be defined in an ATL project implementing preview, thumbnail
-// and search filter handlers and allows sharing of document code with that project.
+﻿#include "stdafx.h"
 #ifndef SHARED_HANDLERS
 #include "mini_hammer.h"
 #endif

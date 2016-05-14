@@ -19,6 +19,7 @@ public:
 
 // Overrides
 public:
+	virtual BOOL OnCreateClient(LPCREATESTRUCT lpcs, CCreateContext* pContext);
 	virtual BOOL PreCreateWindow(CREATESTRUCT& cs);
 	virtual BOOL LoadFrame(UINT nIDResource, DWORD dwDefaultStyle = WS_OVERLAPPEDWINDOW | FWS_ADDTOTITLE, CWnd* pParentWnd = NULL, CCreateContext* pContext = NULL);
 
@@ -31,11 +32,14 @@ public:
 #endif
 
 protected:  // control bar embedded members
-	CMFCMenuBar       m_wndMenuBar;
-	CMFCToolBar       m_wndToolBar;
-	CMFCToolBar       m_wndToolBarTrigger;
-	CMFCStatusBar     m_wndStatusBar;
-	CMFCToolBarImages m_UserImages;
+	CMFCMenuBar			m_wndMenuBar;
+	CMFCToolBar			m_wndToolBar;
+	CMFCToolBar			m_wndToolBarTrigger;
+	CMFCStatusBar		m_wndStatusBar;
+	CMFCToolBarImages	m_UserImages;
+	// 拆分窗口的对象
+	CSplitterWnd		m_wndSplitter;
+	CSplitterWnd		m_wndSplitterSub;
 
 // Generated message map functions
 protected:

@@ -85,13 +85,13 @@ void Vehicle::Update(double time_elapsed)
 	Vector2D acceleration = SteeringForce / m_dMass;
 
 	// 速度 = 速度 + 加速度 *　时间增量
-	m_vVelocity = m_vVelocity + acceleration * m_dTimeElapsed;
+	m_vVelocity = m_vVelocity + acceleration/* * m_dTimeElapsed*/;
 
 	// 修正速度
 	m_vVelocity.Truncate(m_dMaxSpeed);
 
 	// 位置和速度的关系
-	m_vPos = m_vPos + m_vVelocity * time_elapsed;
+	m_vPos = m_vPos + m_vVelocity/* * time_elapsed*/;
 
 	// 如果速度远大于一个很小的值，更新朝向
 	if (m_vVelocity.LengthSq() > 0.00000001)

@@ -18,12 +18,12 @@ Vector2D SteeringBehaviors::Calculate()
 
 	if (On(seek))
 	{
-		m_vSteeringForce += Seek(m_vTarget) * 200.0f;
+		m_vSteeringForce += Seek(m_vTarget) * /*200.0f*/0.5f;
 	}
 
 	if (On(arrive))
 	{
-		m_vSteeringForce += Arrive(m_vTarget) * 200.0f;
+		m_vSteeringForce += Arrive(m_vTarget) * /*200.0f*/1.0f;
 	}
 
 	// ½ÃÕýÇý¶¯Á¦

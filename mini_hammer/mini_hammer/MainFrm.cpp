@@ -4,6 +4,10 @@
 
 #include "stdafx.h"
 #include "mini_hammer.h"
+#include "mini_hammerDoc.h"
+#include "CmediaView.h"
+#include "CbehaviorView.h"
+#include "mini_hammerView.h"
 
 #include "MainFrm.h"
 
@@ -152,6 +156,30 @@ int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	//CMFCToolBar::SetBasicCommands(lstBasicCommands);
 
 	return 0;
+}
+
+BOOL CMainFrame::OnCreateClient(LPCREATESTRUCT lpcs, CCreateContext* pContext)
+{
+	CRect rc;
+	GetClientRect(&rc);
+
+	if(m_wndSplitter.CreateStatic(this, 1, 2) == NULL)
+	{
+		return FALSE;
+	}
+
+	m_wndSplitter.CreateView(0, 1, RUNTIME_CLASS(Cmini_hammerView), CSize(rc.Width() / 2, rc.Height()), pContext);
+
+	if(m_wndSplitterSub.CreateStatic(&m_wndSplitter, 2, 1, WS_CHILD|WS_VISIBLE, 
+		m_wndSplitter.IdFromRowCol(0, 0)) == NULL)
+	{
+		return FALSE;
+	}
+
+	m_wndSplitterSub.CreateView(0, 0, RUNTIME_CLASS(CmediaView), CSize(rc.Width() / 2, rc.Height() / 2), pContext);
+	m_wndSplitterSub.CreateView(1, 0, RUNTIME_CLASS(CbehaviorView), CSize(rc.Width() / 2, rc.Height() / 2), pContext);
+
+	return TRUE;
 }
 
 BOOL CMainFrame::PreCreateWindow(CREATESTRUCT& cs)

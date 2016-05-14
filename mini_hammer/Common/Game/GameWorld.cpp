@@ -54,8 +54,8 @@ void GameWorld::bindToCCLayer(CCLayer* pLayer)
 								Vector2D(0.0f, 0.0f),	/* 加速度 */
 								1.0f,					/* Rotation */
 								1.0f,					/* 质量 */
-								100.0f,					/* 最大速度 */
-								100.0f,					/* 最大驱动力 */
+								1.0f,					/* 最大速度 */
+								1.0f,					/* 最大驱动力 */
 								0.2f);					/* 转身速率 */
 
 	m_pVehicleOwn->initWithFile("media/image/vehicle.png");
@@ -82,8 +82,8 @@ void GameWorld::bindToCCLayer(CCLayer* pLayer)
 			Vector2D(0.0f, 0.0f),	/* 加速度 */
 			1.0f,					/* Rotation */
 			1.0f,					/* 质量 */
-			100.0f,					/* 最大速度 */
-			100.0f,					/* 最大驱动力 */
+			1.0f,					/* 最大速度 */
+			1.0f,					/* 最大驱动力 */
 			0.2f);					/* 转身速率 */
 
 		pBot->initWithFile("media/image/vehicle.png");

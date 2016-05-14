@@ -142,6 +142,8 @@
     <ClInclude Include="..\Common\Triggers\Trigger_HealthGiver.h" />
     <ClInclude Include="..\Common\Triggers\Trigger_WeaponGiver.h" />
     <ClInclude Include="AIDialog.h" />
+    <ClInclude Include="CbehaviorView.h" />
+    <ClInclude Include="CmediaView.h" />
     <ClInclude Include="Graph.h" />
     <ClInclude Include="GraphAlgorithms.h" />
     <ClInclude Include="GraphEdge.h" />
@@ -188,6 +190,8 @@
     <ClCompile Include="..\Common\Triggers\Trigger_HealthGiver.cpp" />
     <ClCompile Include="..\Common\Triggers\Trigger_WeaponGiver.cpp" />
     <ClCompile Include="AIDialog.cpp" />
+    <ClCompile Include="CbehaviorView.cpp" />
+    <ClCompile Include="CmediaView.cpp" />
     <ClCompile Include="Graph.cpp" />
     <ClCompile Include="GraphAlgorithms.cpp" />
     <ClCompile Include="GraphEdge.cpp" />

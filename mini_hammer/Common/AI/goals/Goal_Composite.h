@@ -3,6 +3,7 @@
 #include "Vehicle.h"
 #include "Goal.h"
 #include "2D/Vector2D.h"
+#include "misc/Cgdi.h"
 #include <list>
 
 using namespace std;
@@ -43,6 +44,24 @@ public:
 		}
 
 		m_SubGoals.clear();
+	}
+
+	virtual void RenderText(int& xOffset, int& yOffset)
+	{
+		// 先绘制自己状态
+		Goal::RenderText(xOffset, yOffset);
+		xOffset += 10;
+
+		gdi->TransparentText();
+		SubgoalList::const_reverse_iterator it;
+		for (it = m_SubGoals.rbegin(); 
+			it != m_SubGoals.rend(); 
+			++it)
+		{
+			(*it)->RenderText(xOffset, yOffset);
+		}
+
+		xOffset -= 10;
 	}
 
 	void  Render()
