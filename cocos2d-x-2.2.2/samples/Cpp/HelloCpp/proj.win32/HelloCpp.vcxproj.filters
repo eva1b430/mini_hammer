@@ -50,9 +50,6 @@
     <ClCompile Include="..\Classes\AppDelegate.cpp">
       <Filter>Classes</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\HelloWorldScene.cpp">
-      <Filter>Classes</Filter>
-    </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>win32</Filter>
     </ClCompile>
@@ -152,12 +149,12 @@
     <ClCompile Include="..\..\..\..\..\mini_hammer\Common\AI\goals\Goal_FollowPath.cpp">
       <Filter>Classes\mini_hammer_Adapt\Common\AI\goals</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\GameLayer.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Classes\AppDelegate.h">
-      <Filter>Classes</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\HelloWorldScene.h">
       <Filter>Classes</Filter>
     </ClInclude>
     <ClInclude Include="main.h">
@@ -288,6 +285,9 @@
     </ClInclude>
     <ClInclude Include="..\..\..\..\..\mini_hammer\Common\AI\goals\Goal_FollowPath.h">
       <Filter>Classes\mini_hammer_Adapt\Common\AI\goals</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameLayer.h">
+      <Filter>Classes</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

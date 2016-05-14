@@ -9,7 +9,6 @@ GameWorld::GameWorld(void)
 {
 	m_pPathFinder = new Pathfinder;
 	GlobalVar::instance().SetPathfinder(m_pPathFinder);
-	m_pPathFinder->CreateGraphGrid(800, 600, 10, 10);
 }
 
 
@@ -59,7 +58,7 @@ void GameWorld::bindToCCLayer(CCLayer* pLayer)
 								100.0f,					/* 最大驱动力 */
 								0.2f);					/* 转身速率 */
 
-	m_pVehicleOwn->initWithFile("vehicle.png");
+	m_pVehicleOwn->initWithFile("media/image/vehicle.png");
 	m_pVehicleOwn->autorelease();
 
 	if (m_pVehicleOwn)
@@ -87,7 +86,7 @@ void GameWorld::bindToCCLayer(CCLayer* pLayer)
 			100.0f,					/* 最大驱动力 */
 			0.2f);					/* 转身速率 */
 
-		pBot->initWithFile("vehicle.png");
+		pBot->initWithFile("media/image/vehicle.png");
 		pBot->autorelease();
 		pLayer->addChild(pBot);
 		m_Bots.push_back(pBot);
