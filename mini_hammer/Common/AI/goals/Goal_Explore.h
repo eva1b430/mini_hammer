@@ -7,7 +7,7 @@ class Goal_Explore : public Goal_Composite
 {
 public:
 	Goal_Explore(Vehicle* pOwner)
-		: Goal_Composite(pOwner, Goal::GoalType_Think)
+		: Goal_Composite(pOwner, Goal::GoalType_Explore)
 		, m_bDestinationIsSet(false)
 	{
 

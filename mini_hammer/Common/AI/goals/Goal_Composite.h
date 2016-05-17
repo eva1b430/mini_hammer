@@ -54,6 +54,8 @@ public:
 
 		gdi->TransparentText();
 		SubgoalList::const_reverse_iterator it;
+
+		// 反序输出到视图
 		for (it = m_SubGoals.rbegin(); 
 			it != m_SubGoals.rend(); 
 			++it)
