@@ -168,10 +168,10 @@ BOOL CMainFrame::OnCreateClient(LPCREATESTRUCT lpcs, CCreateContext* pContext)
 		return FALSE;
 	}
 
-	m_wndSplitter.CreateView(0, 1, RUNTIME_CLASS(Cmini_hammerView), CSize(rc.Width() / 2, rc.Height()), pContext);
+	m_wndSplitter.CreateView(0, 0, RUNTIME_CLASS(Cmini_hammerView), CSize(rc.Width() / 2, rc.Height()), pContext);
 
 	if(m_wndSplitterSub.CreateStatic(&m_wndSplitter, 2, 1, WS_CHILD|WS_VISIBLE, 
-		m_wndSplitter.IdFromRowCol(0, 0)) == NULL)
+		m_wndSplitter.IdFromRowCol(0, 1)) == NULL)
 	{
 		return FALSE;
 	}

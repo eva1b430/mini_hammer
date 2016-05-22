@@ -4,6 +4,7 @@
 #include "atltypes.h"
 
 #include <list>
+#define GRID_CELL_SIZE 25
 
 
 class Pathfinder
@@ -68,6 +69,9 @@ public:
 	void Save( char* FileName);
 	void Load( char* FileName);
 
+	// 计算成本表（填充二维数组）
+	void CreatePathCostTable(Graph& graph);
+
 public:
 	// 当前选定的地形元素
 	TerrainItem_Type				m_CurrentTerrainBrush;
@@ -89,5 +93,8 @@ public:
 	std::list<int>					m_Path;
 	// SPT
 	vector<GraphEdge*>				m_SubTree;
+
+	// 成本表
+	vector<vector<double> >			m_PathCostTable;
 };
 #endif

@@ -33,6 +33,7 @@ THE SOFTWARE.
 #include "layers_scenes_transitions_nodes/CCScene.h"
 #include "EditLayer.h"
 #include "SimulationLayer.h"
+#include "GlobalVar.h"
 
 USING_NS_CC;
 using namespace std;

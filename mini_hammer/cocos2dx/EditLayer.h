@@ -7,7 +7,7 @@
 // ±à¼­²ã
 using namespace cocos2d;
 #define EDIT_LAYER_ALPHA	255
-class EditLayer : public cocos2d::CCLayer
+class EditLayer : public cocos2d::CCLayerColor
 {
 public:
 	enum GLPenColor
