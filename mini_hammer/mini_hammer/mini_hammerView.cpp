@@ -171,6 +171,11 @@ void Cmini_hammerView::OnTouchSource()
 	{
 		pPathFinder->ChangeBrush(Pathfinder::emTerrain_Source);
 	}
+
+	if (app.getEditLayer())
+	{
+		app.getEditLayer()->changeEditMark(Pathfinder::emTerrain_Source);
+	}
 }
 void Cmini_hammerView::OnTouchTarget()
 {
@@ -179,6 +184,11 @@ void Cmini_hammerView::OnTouchTarget()
 	if (pPathFinder)
 	{
 		pPathFinder->ChangeBrush(Pathfinder::emTerrain_Target);
+	}
+
+	if (app.getEditLayer())
+	{
+		app.getEditLayer()->changeEditMark(Pathfinder::emTerrain_Target);
 	}
 }
 void Cmini_hammerView::OnTouchObstacle()
@@ -189,6 +199,11 @@ void Cmini_hammerView::OnTouchObstacle()
 	{
 		pPathFinder->ChangeBrush(Pathfinder::emTerrain_Obstacle);
 	}
+
+	if (app.getEditLayer())
+	{
+		app.getEditLayer()->changeEditMark(Pathfinder::emTerrain_Obstacle);
+	}
 }
 void Cmini_hammerView::OnTouchMud()
 {
@@ -197,6 +212,11 @@ void Cmini_hammerView::OnTouchMud()
 	if (pPathFinder)
 	{
 		pPathFinder->ChangeBrush(Pathfinder::emTerrain_Mud);
+	}
+
+	if (app.getEditLayer())
+	{
+		app.getEditLayer()->changeEditMark(Pathfinder::emTerrain_Mud);
 	}
 }
 void Cmini_hammerView::OnTouchWater()
@@ -207,6 +227,11 @@ void Cmini_hammerView::OnTouchWater()
 	{
 		pPathFinder->ChangeBrush(Pathfinder::emTerrain_Water);
 	}
+
+	if (app.getEditLayer())
+	{
+		app.getEditLayer()->changeEditMark(Pathfinder::emTerrain_Water);
+	}
 }
 void Cmini_hammerView::OnTouchWipeOut()
 {
@@ -215,6 +240,11 @@ void Cmini_hammerView::OnTouchWipeOut()
 	if (pPathFinder)
 	{
 		pPathFinder->ChangeBrush(Pathfinder::emTerrain_Normal);
+	}
+
+	if (app.getEditLayer())
+	{
+		app.getEditLayer()->changeEditMark(Pathfinder::emTerrain_Normal);
 	}
 }
 
@@ -366,14 +396,19 @@ void Cmini_hammerView::OnLButtonUp(UINT nFlags, CPoint point)
 		if (GlobalVar::instance().GetPathfinder()->m_CurrentTerrainBrush == Pathfinder::emTerrain_HealthGiver)
 		{
 			pSprite = CCSprite::create("media/image/1.png");
+			app.getEditLayer()->addChild(pSprite);
+			pSprite->setPosition(GlobalVar::instance().HammerPosToCocosPos(Vector2D(point.x, point.y)));
 		} 
 		else if(GlobalVar::instance().GetPathfinder()->m_CurrentTerrainBrush == Pathfinder::emTerrain_WeaponGiver)
 		{
 			pSprite = CCSprite::create("media/image/2.png");
+			app.getEditLayer()->addChild(pSprite);
+			pSprite->setPosition(GlobalVar::instance().HammerPosToCocosPos(Vector2D(point.x, point.y)));
 		}
-
-		app.getEditLayer()->addChild(pSprite);
-		pSprite->setPosition(GlobalVar::instance().HammerPosToCocosPos(Vector2D(point.x, point.y)));
+		else
+		{
+			// do nothing
+		}
 	}
 
 	//Invalidate();

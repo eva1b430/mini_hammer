@@ -105,23 +105,30 @@ void EditLayer::changeEditMark(Pathfinder::TerrainItem_Type emTerrainType)
 	case Pathfinder::emTerrain_HealthGiver:
 		{
 			pTexture = CCTextureCache::sharedTextureCache()->addImage("media/image/1.png");
+			m_pEditMark->setVisible(true);
+
+			if (m_pEditMark)
+			{
+				m_pEditMark->initWithTexture(pTexture);
+			}
 		}
 		break;
 	case Pathfinder::emTerrain_WeaponGiver:
 		{
 			pTexture = CCTextureCache::sharedTextureCache()->addImage("media/image/2.png");
+			m_pEditMark->setVisible(true);
+
+			if (m_pEditMark)
+			{
+				m_pEditMark->initWithTexture(pTexture);
+			}
 		}
 		break;
 	default:
 		{
-			pTexture = CCTextureCache::sharedTextureCache()->addImage("media/image/1.png");
+			m_pEditMark->setVisible(false);
 		}
 		break;
-	}
-
-	if (m_pEditMark)
-	{
-		m_pEditMark->initWithTexture(pTexture);
 	}
 }
 
@@ -171,7 +178,7 @@ void EditLayer::RenderGraph()
 				break;
 
 			case Pathfinder::emTerrain_WeaponGiver:
-				ChangeColor(GL_Light_Grey);
+				ChangeColor(GL_Orange);
 				break;
 
 			default:
@@ -184,7 +191,7 @@ void EditLayer::RenderGraph()
 				pGraph->GetNode(nd).GetTerrainType() == Pathfinder::emTerrain_WeaponGiver)
 			{
 				ccDrawCircle( GlobalVar::instance().HammerPosToCocosPos(pGraph->GetNode(nd).GetPos()), 10, 
-					CC_DEGREES_TO_RADIANS(90), 6, false);
+					CC_DEGREES_TO_RADIANS(90), 20, false);
 			}
 			else
 			{
