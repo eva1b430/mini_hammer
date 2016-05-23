@@ -36,6 +36,7 @@ private:
 			m_ShortestPathTree[NextClosestNode] = m_SearchFrontier[NextClosestNode];
 			if (NextClosestNode == m_iTarget) 
 			{
+				// 找到目标点
 				return;
 			}
 

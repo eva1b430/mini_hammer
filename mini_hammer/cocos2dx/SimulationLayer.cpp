@@ -7,7 +7,7 @@ USING_NS_CC;
 // on "init" you need to initialize your instance
 bool SimulationLayer::init()
 {
-    if ( !CCLayerColor::init() )
+    if ( !/*CCLayerColor::init()*/CCLayerColor::initWithColor(ccc4(128,0,0,255)) )
     {
         return false;
     }

@@ -23,7 +23,7 @@ bool EditLayer::init()
 	ChangeColor(GL_Grey);
     //////////////////////////////
     // 1. super init first
-    if ( !CCLayer::init() )
+    if ( !CCLayerColor::initWithColor(ccc4(255,255,255,255)) )
     {
         return false;
     }
@@ -51,7 +51,7 @@ void EditLayer::menuCloseCallback(CCObject* pSender)
 
 void EditLayer::onEnter()
 {
-	CCLayer::onEnter();
+	CCLayerColor::onEnter();
 
 	// Ìí¼Ó
 	scheduleUpdate();
@@ -62,17 +62,17 @@ void EditLayer::onExit()
 	// Ìí¼Ó
 	unscheduleUpdate();
 
-	CCLayer::onExit();
+	CCLayerColor::onExit();
 }
 
 void EditLayer::update(float delta)
 {
-	CCLayer::update(delta);
+	CCLayerColor::update(delta);
 }
 
 void EditLayer::draw()
 {
-	CCLayer::draw();
+	CCLayerColor::draw();
 
 	// 
 	RenderGraph();

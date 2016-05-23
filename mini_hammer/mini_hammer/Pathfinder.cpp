@@ -77,14 +77,11 @@ void Pathfinder::Render()
 
 void Pathfinder::CreateGraphGrid(int nRectWidth, int nRectHeight, int nWidthItemNum, int nHeightItemNum)
 {
-	double CellWidth  = (double)nRectWidth / (double)nWidthItemNum;
-	double CellHeight = (double)nRectHeight / (double)nHeightItemNum;
+	double midX = GRID_CELL_SIZE/2;
+	double midY = GRID_CELL_SIZE/2;
 
-	double midX = CellWidth/2;
-	double midY = CellHeight/2;
-
-	m_fCellWidth = CellWidth;
-	m_fCellHeight = CellHeight;
+	m_fCellWidth = GRID_CELL_SIZE;
+	m_fCellHeight = GRID_CELL_SIZE;
 
 	m_nWidthItemNum = nWidthItemNum;
 	m_nHeightItemNum = nHeightItemNum;
@@ -108,7 +105,7 @@ void Pathfinder::CreateGraphGrid(int nRectWidth, int nRectHeight, int nWidthItem
 			{
 				GraphNode node;
 				node.SetIndex(m_pGraph->GetNextFreeNodeIndex());
-				node.SetPos(Vector2D(midX + (col*CellWidth), midY + (row*CellHeight)));
+				node.SetPos(Vector2D(midX + (col*GRID_CELL_SIZE), midY + (row*GRID_CELL_SIZE)));
 				node.SetTerrainType(emTerrain_Normal);
 				m_pGraph->AddNode(node);
 			}
@@ -552,4 +549,30 @@ void Pathfinder::Load(char* FileName)
 
 	UpdateAlgorithm();
 
+}
+
+void Pathfinder::CreatePathCostTable( Graph& graph )
+{
+	m_PathCostTable.clear();
+
+	// 全部初始化为0.0f，该二维表的两个维度都等于图的节点数量
+	vector<double> row(graph.GetNodesNum(), 0.0);
+	vector<vector<double> > PathCosts(graph.GetNodesNum(), row);
+
+	for (int source = 0; source != graph.GetNodesNum(); source++)
+	{
+		Graph_SearchDijkstra djk(graph, 
+			source,
+			-1);
+
+		for (int target = 0; target != graph.GetNodesNum(); target++)
+		{
+			if (source != target)
+			{
+				PathCosts[source][target] = djk.GetCostToNode(target);
+			}
+		}
+	}
+
+	m_PathCostTable = PathCosts;
 }
