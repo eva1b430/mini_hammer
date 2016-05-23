@@ -2,7 +2,7 @@
 #include "AppMacros.h"
 #include "GlobalVar.h"
 #include "Graph.h"
-#include "Pathfinder.h"
+//#include "Pathfinder.h"
 #include "Vehicle.h"
 #include "Goal_Think.h"
 USING_NS_CC;
@@ -55,6 +55,12 @@ void EditLayer::onEnter()
 
 	// Ìí¼Ó
 	scheduleUpdate();
+
+	// ±à¼­±ê¼Ç
+	m_pEditMark = CCSprite::create();
+	addChild(m_pEditMark);
+	m_pEditMark->setOpacity(200);
+	m_pEditMark->setScale(2.0f);
 }
 
 void EditLayer::onExit()
@@ -88,6 +94,42 @@ void EditLayer::draw()
 
 		ccPointSize(8);
 		ccDrawPoint(GlobalVar::instance().HammerPosToCocosPos((*itr)->GetPos()));
+	}
+}
+
+void EditLayer::changeEditMark(Pathfinder::TerrainItem_Type emTerrainType)
+{
+	CCTexture2D *pTexture = NULL;
+	switch(emTerrainType)
+	{
+	case Pathfinder::emTerrain_HealthGiver:
+		{
+			pTexture = CCTextureCache::sharedTextureCache()->addImage("media/image/1.png");
+		}
+		break;
+	case Pathfinder::emTerrain_WeaponGiver:
+		{
+			pTexture = CCTextureCache::sharedTextureCache()->addImage("media/image/2.png");
+		}
+		break;
+	default:
+		{
+			pTexture = CCTextureCache::sharedTextureCache()->addImage("media/image/1.png");
+		}
+		break;
+	}
+
+	if (m_pEditMark)
+	{
+		m_pEditMark->initWithTexture(pTexture);
+	}
+}
+
+void EditLayer::updateEditMarkPosition(CCPoint pos)
+{
+	if (m_pEditMark)
+	{
+		m_pEditMark->setPosition(pos);
 	}
 }
 

@@ -36,6 +36,9 @@ public:
     */
     virtual void applicationWillEnterForeground();
 
+	EditLayer* getEditLayer();
+	SimulationLayer* getSimulationLayer();
+
 	void enablEdit();
 	void disableEdit();
 

@@ -7,10 +7,10 @@
 class GameWorld;
 class Cmini_hammerView : public CView
 {
-	enum emEditMode
+	enum emViewMode
 	{
-		em_EditModeMode_Edit = 0,		// 编辑模式
-		em_EditModeMode_Simulation		// 仿真模式
+		em_ViewMode_Edit = 0,		// 编辑模式
+		em_ViewMode_Simulation		// 仿真模式
 	};
 
 protected: // create from serialization only
@@ -88,7 +88,7 @@ protected:
 	
 private:
 	// 是否启动仿真
-	emEditMode m_emMode;
+	emViewMode		m_emMode;
 	long m_nCmdID;
 	GameWorld*		m_pGame;
 

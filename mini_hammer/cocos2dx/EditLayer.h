@@ -3,6 +3,7 @@
 
 #include "cocos2d.h"
 #include "ccTypes.h"
+#include "Pathfinder.h"
 
 // ±à¼­²ã
 using namespace cocos2d;
@@ -30,6 +31,15 @@ public:
 		GL_Hollow
 	};
 public:
+	EditLayer(void)
+		: m_pEditMark(NULL)
+	{
+
+	}
+	virtual ~EditLayer()
+	{
+
+	}
     // Here's a difference. Method 'init' in cocos2d-x returns bool, instead of returning 'id' in cocos2d-iphone
     virtual bool init();  
 
@@ -48,6 +58,9 @@ public:
 
 	virtual void draw();
 
+	void changeEditMark(Pathfinder::TerrainItem_Type emTerrainType);
+	void updateEditMarkPosition(CCPoint pos);
+
 protected:
 	// ¹¤¾ßº¯Êý
 	void RenderGraph();
@@ -57,6 +70,7 @@ protected:
 
 private:
 	ccColor4B	m_pTerrainColor;
+	CCSprite*	m_pEditMark;
 };
 
 #endif // EDITLAYER_H

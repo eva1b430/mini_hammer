@@ -166,3 +166,13 @@ void AppDelegate::applicationWillEnterForeground() {
     // if you use SimpleAudioEngine, it must resume here
     // SimpleAudioEngine::sharedEngine()->resumeBackgroundMusic();
 }
+
+EditLayer* AppDelegate::getEditLayer()
+{
+	return m_pEditLayer;
+}
+
+SimulationLayer* AppDelegate::getSimulationLayer()
+{
+	return m_pSimulationLayer;
+}

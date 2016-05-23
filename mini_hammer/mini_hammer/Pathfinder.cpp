@@ -288,6 +288,12 @@ void Pathfinder::PaintTrigger(CPoint p)
 	}
 
 	UpdateAlgorithm();
+
+	// 计算成本表
+	if (m_pGraph)
+	{
+		CreatePathCostTable(*m_pGraph);
+	}
 }
 
 void Pathfinder::PaintTerrain(CPoint p)

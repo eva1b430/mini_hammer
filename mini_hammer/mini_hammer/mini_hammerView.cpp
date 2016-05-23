@@ -22,6 +22,9 @@
 #include "Regulator.h"
 #include "Vehicle.h"
 
+#include "EditLayer.h"
+#include "SimulationLayer.h"
+
 using namespace cocos2d;
 
 #ifdef _DEBUG
@@ -87,7 +90,7 @@ AppDelegate app;
 Cmini_hammerView::Cmini_hammerView()
 	: m_pGame(NULL)
 	, m_bInitCocos2dX(FALSE)
-	, m_emMode(em_EditModeMode_Edit)
+	, m_emMode(em_ViewMode_Edit)
 {
 	// TODO: add construction code here
 	m_pGame = new GameWorld;
@@ -224,6 +227,11 @@ void Cmini_hammerView::OnAddHealthGiver()
 	{
 		pPathFinder->ChangeBrush(Pathfinder::emTerrain_HealthGiver);
 	}
+
+	if (app.getEditLayer())
+	{
+		app.getEditLayer()->changeEditMark(Pathfinder::emTerrain_HealthGiver);
+	}
 }
 
 void Cmini_hammerView::OnAddRocketGiver()
@@ -234,19 +242,24 @@ void Cmini_hammerView::OnAddRocketGiver()
 	{
 		pPathFinder->ChangeBrush(Pathfinder::emTerrain_WeaponGiver);
 	}
+
+	if (app.getEditLayer())
+	{
+		app.getEditLayer()->changeEditMark(Pathfinder::emTerrain_WeaponGiver);
+	}
 }
 
 void Cmini_hammerView::OnRun()
 {
 	m_nCmdID = ID_BUTTON_RUN;
-	m_emMode = em_EditModeMode_Simulation;
+	m_emMode = em_ViewMode_Simulation;
 	app.disableEdit();
 }
 
 void Cmini_hammerView::OnStop()
 {
 	m_nCmdID = ID_BUTTON_STOP;
-	m_emMode = em_EditModeMode_Edit;
+	m_emMode = em_ViewMode_Edit;
 	app.enablEdit();
 }
 
@@ -335,7 +348,7 @@ void Cmini_hammerView::OnLButtonUp(UINT nFlags, CPoint point)
 	Pathfinder* pPathFinder = GlobalVar::instance().GetPathfinder();
 	if (pPathFinder)
 	{
-		if (m_emMode == em_EditModeMode_Edit)
+		if (m_emMode == em_ViewMode_Edit)
 		{
 			pPathFinder->PaintTrigger(point);
 		}
@@ -358,7 +371,7 @@ void Cmini_hammerView::OnLButtonUp(UINT nFlags, CPoint point)
 void Cmini_hammerView::OnMouseMove(UINT nFlags, CPoint point)
 {
 	// 如果是编辑模式，则接收事件，否则返回
-	if (m_emMode == em_EditModeMode_Simulation)
+	if (m_emMode == em_ViewMode_Simulation)
 	{
 		return ;
 	}
@@ -366,6 +379,20 @@ void Cmini_hammerView::OnMouseMove(UINT nFlags, CPoint point)
 	// TODO: Add your message handler code here and/or call default
 	if (nFlags == MK_LBUTTON)
 	{
+		// 区分
+		CCSprite* pSprite = NULL;
+		if (GlobalVar::instance().GetPathfinder()->m_CurrentTerrainBrush == Pathfinder::emTerrain_HealthGiver)
+		{
+			pSprite = CCSprite::create("media/image/1.png");
+		} 
+		else if(GlobalVar::instance().GetPathfinder()->m_CurrentTerrainBrush == Pathfinder::emTerrain_WeaponGiver)
+		{
+			pSprite = CCSprite::create("media/image/2.png");
+		}
+
+		app.getEditLayer()->addChild(pSprite);
+		pSprite->setPosition(GlobalVar::instance().HammerPosToCocosPos(Vector2D(point.x, point.y)));
+
 		Pathfinder* pPathFinder = GlobalVar::instance().GetPathfinder();
 		if (pPathFinder)
 		{
@@ -375,6 +402,8 @@ void Cmini_hammerView::OnMouseMove(UINT nFlags, CPoint point)
 
 	HCURSOR hCur = LoadCursor(NULL, IDC_CROSS);
 	::SetCursor(hCur);
+
+	app.getEditLayer()->updateEditMarkPosition(GlobalVar::instance().HammerPosToCocosPos(Vector2D(point.x, point.y)));
 
 	//Invalidate();
 
