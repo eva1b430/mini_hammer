@@ -360,6 +360,20 @@ void Cmini_hammerView::OnLButtonUp(UINT nFlags, CPoint point)
 			Vector2D pos = Vector2D(point.x, point.y);
 			pOwn->GetSteering()->SetTarget(pos);
 		}
+
+		// 绘制触发器
+		CCSprite* pSprite = NULL;
+		if (GlobalVar::instance().GetPathfinder()->m_CurrentTerrainBrush == Pathfinder::emTerrain_HealthGiver)
+		{
+			pSprite = CCSprite::create("media/image/1.png");
+		} 
+		else if(GlobalVar::instance().GetPathfinder()->m_CurrentTerrainBrush == Pathfinder::emTerrain_WeaponGiver)
+		{
+			pSprite = CCSprite::create("media/image/2.png");
+		}
+
+		app.getEditLayer()->addChild(pSprite);
+		pSprite->setPosition(GlobalVar::instance().HammerPosToCocosPos(Vector2D(point.x, point.y)));
 	}
 
 	//Invalidate();
@@ -379,20 +393,6 @@ void Cmini_hammerView::OnMouseMove(UINT nFlags, CPoint point)
 	// TODO: Add your message handler code here and/or call default
 	if (nFlags == MK_LBUTTON)
 	{
-		// 区分
-		CCSprite* pSprite = NULL;
-		if (GlobalVar::instance().GetPathfinder()->m_CurrentTerrainBrush == Pathfinder::emTerrain_HealthGiver)
-		{
-			pSprite = CCSprite::create("media/image/1.png");
-		} 
-		else if(GlobalVar::instance().GetPathfinder()->m_CurrentTerrainBrush == Pathfinder::emTerrain_WeaponGiver)
-		{
-			pSprite = CCSprite::create("media/image/2.png");
-		}
-
-		app.getEditLayer()->addChild(pSprite);
-		pSprite->setPosition(GlobalVar::instance().HammerPosToCocosPos(Vector2D(point.x, point.y)));
-
 		Pathfinder* pPathFinder = GlobalVar::instance().GetPathfinder();
 		if (pPathFinder)
 		{
