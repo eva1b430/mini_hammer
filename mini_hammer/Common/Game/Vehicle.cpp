@@ -33,8 +33,10 @@ Vehicle::Vehicle(	GameWorld* world,
 {
 	m_pSteering = new SteeringBehaviors(this);
 	m_pWeaponSys = new WeaponSystem(this);
+
 	m_pGoalArbitrationRegulator = new Regulator(4.0f);
 	m_pVisionUpdateRegulator = new Regulator(4.0f);
+
 	m_pBrain = new Goal_Think(this);
 	m_pBrain->RemoveAllSubgoals();
 }
@@ -107,7 +109,7 @@ void Vehicle::Update(double time_elapsed)
 
 	if (m_pWeaponSys)
 	{
-		// 更新武器系统
+		// 更新武器系统（按照远，中，近距离）
 	}
 
 	if (m_pGoalArbitrationRegulator->isReady() && m_bThink)
