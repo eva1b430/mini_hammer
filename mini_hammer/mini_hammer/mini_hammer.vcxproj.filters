@@ -228,6 +228,9 @@
     <ClInclude Include="CmediaView.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\Common\Armory\Weapons\RocketLauncher.h">
+      <Filter>Common\Armory\Weapons</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="mini_hammer.cpp">
@@ -358,6 +361,9 @@
     </ClCompile>
     <ClCompile Include="CmediaView.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Armory\Weapons\RocketLauncher.cpp">
+      <Filter>Common\Armory\Weapons</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

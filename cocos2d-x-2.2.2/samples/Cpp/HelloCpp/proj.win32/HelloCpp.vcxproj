@@ -69,7 +69,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\..\..\cocos2dx;$(ProjectDir)..\..\..\..\cocos2dx\include;$(ProjectDir)..\..\..\..\cocos2dx\kazmath\include;$(ProjectDir)..\..\..\..\cocos2dx\platform\win32;$(ProjectDir)..\..\..\..\cocos2dx\platform\third_party\win32\OGLES;$(ProjectDir)..\..\..\..\cocos2dx\layers_scenes_transitions_nodes;..\Classes;..\..\..\..\..\mini_hammer\Common\Game;..\..\..\..\..\mini_hammer\Common;..\..\..\..\..\mini_hammer\mini_hammer;..\..\..\..\..\mini_hammer\Common\Time;..\..\..\..\..\mini_hammer\Common\AI;..\..\..\..\..\mini_hammer\Common\AI\goals;..\..\..\..\..\mini_hammer\Common\Triggers;..\..\..\..\..\mini_hammer\Common\Armory\Weapons;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\..\..\cocos2dx;$(ProjectDir)..\..\..\..\cocos2dx\include;$(ProjectDir)..\..\..\..\cocos2dx\kazmath\include;$(ProjectDir)..\..\..\..\cocos2dx\platform\win32;$(ProjectDir)..\..\..\..\cocos2dx\platform\third_party\win32\OGLES;$(ProjectDir)..\..\..\..\cocos2dx\layers_scenes_transitions_nodes;..\Classes;..\..\..\..\..\mini_hammer\Common\Game;..\..\..\..\..\mini_hammer\Common;..\..\..\..\..\mini_hammer\mini_hammer;..\..\..\..\..\mini_hammer\Common\Time;..\..\..\..\..\mini_hammer\Common\AI;..\..\..\..\..\mini_hammer\Common\AI\goals;..\..\..\..\..\mini_hammer\Common\Triggers;..\..\..\..\..\mini_hammer\Common\Armory\Weapons;..\..\..\..\..\mini_hammer\Common\Armory\Projectiles;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;COCOS2D_DEBUG=1;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -131,6 +131,7 @@
     <ClCompile Include="..\..\..\..\..\mini_hammer\Common\Armory\Goods\Goods.cpp" />
     <ClCompile Include="..\..\..\..\..\mini_hammer\Common\Armory\Projectiles\Projectile.cpp" />
     <ClCompile Include="..\..\..\..\..\mini_hammer\Common\Armory\Projectiles\Projectile_Rocket.cpp" />
+    <ClCompile Include="..\..\..\..\..\mini_hammer\Common\Armory\Weapons\RocketLauncher.cpp" />
     <ClCompile Include="..\..\..\..\..\mini_hammer\Common\Armory\Weapons\Weapon.cpp" />
     <ClCompile Include="..\..\..\..\..\mini_hammer\Common\Armory\Weapons\WeaponSystem.cpp" />
     <ClCompile Include="..\..\..\..\..\mini_hammer\Common\Game\BaseEntity.cpp" />
@@ -168,6 +169,7 @@
     <ClInclude Include="..\..\..\..\..\mini_hammer\Common\Armory\Goods\Goods.h" />
     <ClInclude Include="..\..\..\..\..\mini_hammer\Common\Armory\Projectiles\Projectile.h" />
     <ClInclude Include="..\..\..\..\..\mini_hammer\Common\Armory\Projectiles\Projectile_Rocket.h" />
+    <ClInclude Include="..\..\..\..\..\mini_hammer\Common\Armory\Weapons\RocketLauncher.h" />
     <ClInclude Include="..\..\..\..\..\mini_hammer\Common\Armory\Weapons\Weapon.h" />
     <ClInclude Include="..\..\..\..\..\mini_hammer\Common\Armory\Weapons\WeaponSystem.h" />
     <ClInclude Include="..\..\..\..\..\mini_hammer\Common\Game\BaseEntity.h" />

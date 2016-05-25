@@ -2,10 +2,14 @@
 #include "GlobalVar.h"
 #include "Pathfinder.h"
 #include "Vehicle.h"
+#include "Projectile.h"
+#include "Projectile_Rocket.h"
+
 
 GameWorld::GameWorld(void)
 	: m_pPathFinder(NULL)
 	, m_pVehicleOwn(NULL)
+	, m_pUILayer(NULL)
 {
 	m_pPathFinder = new Pathfinder;
 	GlobalVar::instance().SetPathfinder(m_pPathFinder);
@@ -28,6 +32,8 @@ GameWorld::~GameWorld(void)
 	//}
 
 	// 敌人列表也不需要释放，由引擎来做
+
+	// 箭矢列表也不需要释放，有引擎来做
 }
 
 void GameWorld::Update(double time_elapsed)
@@ -35,19 +41,29 @@ void GameWorld::Update(double time_elapsed)
 	if (m_pVehicleOwn)
 	{
 		m_pVehicleOwn->Update(time_elapsed);
+	}
 
-		list<Vehicle*>::iterator itr;
-		for (itr = m_Bots.begin();
-			itr != m_Bots.end();
-			itr++)
-		{
-			(*itr)->Update(time_elapsed);
-		}
+	list<Vehicle*>::iterator itr;
+	for (itr = m_Bots.begin();
+		itr != m_Bots.end();
+		itr++)
+	{
+		(*itr)->Update(time_elapsed);
+	}
+
+	list<Projectile*>::iterator itrProjectile;
+	for (itrProjectile = m_Projectiles.begin();
+		itrProjectile != m_Projectiles.end();
+		itrProjectile++)
+	{
+		(*itrProjectile)->Update();
 	}
 }
 
 void GameWorld::bindToCCLayer(CCLayer* pLayer)
 {
+	m_pUILayer = pLayer;
+
 	m_pVehicleOwn = new Vehicle( this,
 								Vector2D(20.0f, 20.0f), /* 位置 */
 								1.0f,					/* 半径 */
@@ -63,7 +79,7 @@ void GameWorld::bindToCCLayer(CCLayer* pLayer)
 
 	if (m_pVehicleOwn)
 	{
-		pLayer->addChild(m_pVehicleOwn);
+		m_pUILayer->addChild(m_pVehicleOwn);
 	}
 	
 	m_pVehicleOwn->SetPos(Vector2D(0.0f, 0.0f));
@@ -88,7 +104,7 @@ void GameWorld::bindToCCLayer(CCLayer* pLayer)
 
 		pBot->initWithFile("media/image/vehicle.png");
 		pBot->autorelease();
-		pLayer->addChild(pBot);
+		m_pUILayer->addChild(pBot);
 		m_Bots.push_back(pBot);
 
 		// 随机一个位置，随机一些目标点
@@ -98,5 +114,20 @@ void GameWorld::bindToCCLayer(CCLayer* pLayer)
 		//pBot->GetSteering()->SetTarget(Vector2D(x, y));
 		//pBot->GetSteering()->ArriveOn();
 		pBot->EnableThink();
+	}
+}
+
+void GameWorld::AddRocket(Vehicle* shooter, Vector2D target)
+{
+	Projectile* pProjectile = new Projectile_Rocket(shooter, target);
+
+	// 添加进来
+	m_Projectiles.push_back(pProjectile);
+
+	pProjectile->initWithFile("media/image/missile.png");
+	pProjectile->autorelease();
+	if (m_pUILayer)
+	{
+		m_pUILayer->addChild(pProjectile);
 	}
 }

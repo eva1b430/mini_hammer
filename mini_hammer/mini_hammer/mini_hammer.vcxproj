@@ -127,6 +127,7 @@
     <ClInclude Include="..\Common\Armory\Goods\Goods.h" />
     <ClInclude Include="..\Common\Armory\Projectiles\Projectile.h" />
     <ClInclude Include="..\Common\Armory\Projectiles\Projectile_Rocket.h" />
+    <ClInclude Include="..\Common\Armory\Weapons\RocketLauncher.h" />
     <ClInclude Include="..\Common\Armory\Weapons\Weapon.h" />
     <ClInclude Include="..\Common\Armory\Weapons\WeaponSystem.h" />
     <ClInclude Include="..\Common\Game\BaseEntity.h" />
@@ -176,6 +177,7 @@
     <ClCompile Include="..\Common\Armory\Goods\Goods.cpp" />
     <ClCompile Include="..\Common\Armory\Projectiles\Projectile.cpp" />
     <ClCompile Include="..\Common\Armory\Projectiles\Projectile_Rocket.cpp" />
+    <ClCompile Include="..\Common\Armory\Weapons\RocketLauncher.cpp" />
     <ClCompile Include="..\Common\Armory\Weapons\Weapon.cpp" />
     <ClCompile Include="..\Common\Armory\Weapons\WeaponSystem.cpp" />
     <ClCompile Include="..\Common\Game\BaseEntity.cpp" />

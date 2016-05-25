@@ -8,6 +8,7 @@
 using namespace std;
 class Vehicle;
 class Weapon;
+// 智能体是不持有任何武器的，它只是持有武器系统
 class WeaponSystem
 {
 public:
@@ -16,6 +17,9 @@ public:
 
 	// 添加武器到武器表
 	void AddWeapon(BaseEntity::BaseEntity_Type entity_type);
+
+	// 
+	void ShootAt(Vector2D pos);
 
 private:
 	// 拥有武器系统的智能体

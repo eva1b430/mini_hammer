@@ -29,7 +29,7 @@ public:
 					 100,
 					 shooter->GetHeading(),
 					 1.0f,
-					 200.0f,
+					 3.0f,
 					 100.0f)
 	{
 
@@ -38,6 +38,7 @@ public:
 	~Projectile_Rocket(void);
 
 	void Update();
+	void Render();
 	
 protected:
 	

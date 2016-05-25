@@ -17,10 +17,12 @@ public:
 		emBaseEntity_Type_Waypoint			= 3,
 		emBaseEntity_Type_Health			= 4,
 		emBaseEntity_Type_Spawn_Point		= 5,
+
 		emBaseEntity_Type_Rail_Gun			= 6,
 		emBaseEntity_Type_Rocket_Launcher	= 7,
 		emBaseEntity_Type_Shotgun			= 8,
 		emBaseEntity_Type_Blaster			= 9,
+
 		emBaseEntity_Type_Obstacle			= 10,
 		emBaseEntity_Type_Sliding_Door		= 11,
 		emBaseEntity_Type_Door_Trigger		= 12

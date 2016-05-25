@@ -152,6 +152,9 @@
     <ClCompile Include="..\Classes\GameLayer.cpp">
       <Filter>Classes</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\..\..\mini_hammer\Common\Armory\Weapons\RocketLauncher.cpp">
+      <Filter>Classes\mini_hammer_Adapt\Common\Armory\Weapons</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Classes\AppDelegate.h">
@@ -288,6 +291,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\GameLayer.h">
       <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\mini_hammer\Common\Armory\Weapons\RocketLauncher.h">
+      <Filter>Classes\mini_hammer_Adapt\Common\Armory\Weapons</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
