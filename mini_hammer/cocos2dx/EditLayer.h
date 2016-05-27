@@ -32,7 +32,7 @@ public:
 	};
 public:
 	EditLayer(void)
-		: m_pEditMark(NULL)
+		: m_pTriggerSprite(NULL)
 	{
 
 	}
