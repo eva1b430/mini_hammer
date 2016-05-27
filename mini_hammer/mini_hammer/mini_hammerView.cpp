@@ -389,6 +389,8 @@ void Cmini_hammerView::OnLButtonUp(UINT nFlags, CPoint point)
 				pSprite = CCSprite::create("media/image/1.png");
 				app.getEditLayer()->addChild(pSprite);
 				pSprite->setPosition(GlobalVar::instance().HammerPosToCocosPos(Vector2D(point.x, point.y)));
+
+				pPathFinder->AddHealthGiver(Vector2D(point.x, point.y), 10.0f);
 			} 
 			else if(GlobalVar::instance().GetPathfinder()->m_CurrentTerrainBrush == Pathfinder::emTerrain_WeaponGiver)
 			{

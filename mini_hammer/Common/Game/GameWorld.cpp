@@ -1,7 +1,6 @@
 #include "GameWorld.h"
 #include "GlobalVar.h"
 #include "Pathfinder.h"
-#include "Vehicle.h"
 #include "Projectile.h"
 #include "Projectile_Rocket.h"
 
@@ -34,6 +33,8 @@ GameWorld::~GameWorld(void)
 	// 敌人列表也不需要释放，由引擎来做
 
 	// 箭矢列表也不需要释放，有引擎来做
+
+	// 触发器列表需要释放
 }
 
 void GameWorld::Update(double time_elapsed)
@@ -51,23 +52,7 @@ void GameWorld::Update(double time_elapsed)
 		(*itr)->Update(time_elapsed);
 	}
 
-	//list<Projectile*>::iterator itrProjectile;
-	//for (itrProjectile = m_Projectiles.begin();
-	//	itrProjectile != m_Projectiles.end();
-	//	itrProjectile++)
-	//{
-	//	if (!(*itrProjectile)->isDead())
-	//	{
-	//		(*itrProjectile)->Update();
-	//	}
-	//	else
-	//	{
-	//		// 删掉了
-	//		itrProjectile = m_Projectiles.erase(itrProjectile);
-	//		(*itrProjectile)->removeFromParent();
-	//	}
-	//}
-
+	// 容器的删除会导致迭代器失效
 	list<Projectile*>::iterator itrProjectile = m_Projectiles.begin();
 	while (itrProjectile != m_Projectiles.end())
 	{
@@ -81,6 +66,12 @@ void GameWorld::Update(double time_elapsed)
 			(*itrProjectile)->removeFromParent();
 			itrProjectile = m_Projectiles.erase(itrProjectile);
 		}   
+	}
+
+	// 更新触发器系统
+	if (m_pPathFinder)
+	{
+		m_pPathFinder->UpdateTriggerSystem(m_Bots);
 	}
 }
 
@@ -97,7 +88,7 @@ void GameWorld::bindToCCLayer(CCLayer* pLayer)
 								1.0f,					/* 最大速度 */
 								1.0f,					/* 最大驱动力 */
 								0.2f);					/* 转身速率 */
-
+	m_pVehicleOwn->autorelease();
 	m_pVehicleOwn->initWithFile("media/image/vehicle.png");
 	if (m_pVehicleOwn)
 	{
@@ -123,7 +114,7 @@ void GameWorld::bindToCCLayer(CCLayer* pLayer)
 			1.0f,					/* 最大速度 */
 			1.0f,					/* 最大驱动力 */
 			0.2f);					/* 转身速率 */
-
+		pBot->autorelease();
 		pBot->initWithFile("media/image/vehicle.png");
 		m_pUILayer->addChild(pBot);
 		m_Bots.push_back(pBot);
@@ -141,10 +132,10 @@ void GameWorld::bindToCCLayer(CCLayer* pLayer)
 void GameWorld::AddRocket(Vehicle* shooter, Vector2D target)
 {
 	Projectile* pProjectile = new Projectile_Rocket(shooter, target);
+	pProjectile->autorelease();
 
 	// 添加进来
 	m_Projectiles.push_back(pProjectile);
-
 	pProjectile->initWithFile("media/image/missile.png");
 	if (m_pUILayer)
 	{

@@ -2,7 +2,6 @@
 #define VEHICLE_H
 #include "MovingEntity.h"
 #include "SteeringBehaviors.h"
-#include "GameWorld.h"
 #include "2D/Vector2D.h"
 
 class GameWorld;

@@ -2,6 +2,7 @@
 #include "WeaponSystem.h"
 #include "Regulator.h"
 #include "Goal_Think.h"
+#include "GameWorld.h"
 
 Vehicle::Vehicle(	GameWorld* world,
 	Vector2D  position,

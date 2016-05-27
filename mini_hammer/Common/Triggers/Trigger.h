@@ -29,7 +29,7 @@ public:
 };
 
 // 触发器基类
-class Trigger : public BaseEntity
+class Trigger/* : public BaseEntity*/
 {
 public:
 	Trigger(void)
@@ -55,7 +55,6 @@ public:
 private:
 	// 对应导航图结点索引
 	int			m_iGraphNodeIndex;
-	 
 };
 
 // 区域触发器（条件触发器的一种）
