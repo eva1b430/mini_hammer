@@ -51,12 +51,36 @@ void GameWorld::Update(double time_elapsed)
 		(*itr)->Update(time_elapsed);
 	}
 
-	list<Projectile*>::iterator itrProjectile;
-	for (itrProjectile = m_Projectiles.begin();
-		itrProjectile != m_Projectiles.end();
-		itrProjectile++)
+	//list<Projectile*>::iterator itrProjectile;
+	//for (itrProjectile = m_Projectiles.begin();
+	//	itrProjectile != m_Projectiles.end();
+	//	itrProjectile++)
+	//{
+	//	if (!(*itrProjectile)->isDead())
+	//	{
+	//		(*itrProjectile)->Update();
+	//	}
+	//	else
+	//	{
+	//		// 删掉了
+	//		itrProjectile = m_Projectiles.erase(itrProjectile);
+	//		(*itrProjectile)->removeFromParent();
+	//	}
+	//}
+
+	list<Projectile*>::iterator itrProjectile = m_Projectiles.begin();
+	while (itrProjectile != m_Projectiles.end())
 	{
-		(*itrProjectile)->Update();
+		if (!(*itrProjectile)->isDead())
+		{
+			(*itrProjectile)->Update();
+			++itrProjectile;
+		}
+		else
+		{    
+			(*itrProjectile)->removeFromParent();
+			itrProjectile = m_Projectiles.erase(itrProjectile);
+		}   
 	}
 }
 
@@ -75,8 +99,6 @@ void GameWorld::bindToCCLayer(CCLayer* pLayer)
 								0.2f);					/* 转身速率 */
 
 	m_pVehicleOwn->initWithFile("media/image/vehicle.png");
-	m_pVehicleOwn->autorelease();
-
 	if (m_pVehicleOwn)
 	{
 		m_pUILayer->addChild(m_pVehicleOwn);
@@ -103,7 +125,6 @@ void GameWorld::bindToCCLayer(CCLayer* pLayer)
 			0.2f);					/* 转身速率 */
 
 		pBot->initWithFile("media/image/vehicle.png");
-		pBot->autorelease();
 		m_pUILayer->addChild(pBot);
 		m_Bots.push_back(pBot);
 
@@ -125,7 +146,6 @@ void GameWorld::AddRocket(Vehicle* shooter, Vector2D target)
 	m_Projectiles.push_back(pProjectile);
 
 	pProjectile->initWithFile("media/image/missile.png");
-	pProjectile->autorelease();
 	if (m_pUILayer)
 	{
 		m_pUILayer->addChild(pProjectile);

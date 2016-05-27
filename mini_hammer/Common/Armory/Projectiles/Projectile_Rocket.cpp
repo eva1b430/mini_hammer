@@ -18,6 +18,23 @@ void Projectile_Rocket::Update()
 
 	//update the position
 	m_vPos += m_vVelocity;
+
+	if (m_vVelocity.LengthSq() > 0.00000001)
+	{    
+		m_vHeading = Vec2DNormalize(m_vVelocity);
+
+		m_vSide = m_vHeading.Perp();
+
+		float angel = GetAngelByHeading();
+
+		setRotation(180 - angel);
+	}
+
+	// 简单的删除行为
+	if (m_vOrigin.Distance(m_vPos) > 180.0f)
+	{
+		m_bDead = true;
+	}
 }
 
 void Projectile_Rocket::Render()

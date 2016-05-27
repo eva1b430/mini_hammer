@@ -27,9 +27,6 @@ public:
 	// 逻辑帧
 	virtual void Update(double time_elapsed);
 
-	// 通过Heading向量返回夹角
-	float GetAngelByHeading();
-
 	// 渲染帧
 	virtual void Render();
 	virtual void draw(void);

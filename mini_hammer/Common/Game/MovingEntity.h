@@ -62,6 +62,9 @@ public:
 	double    GetMaxTurnRate()const{return m_dMaxTurnRate;}
 	void      SetMaxTurnRate(double val){m_dMaxTurnRate = val;}
 
+	// 通过Heading向量返回夹角
+	float	  GetAngelByHeading();
+
 protected:
 	// 定义速度
 	Vector2D	m_vVelocity;

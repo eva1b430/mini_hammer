@@ -70,7 +70,7 @@ protected:
 
 private:
 	ccColor4B	m_pTerrainColor;
-	CCSprite*	m_pEditMark;
+	CCSprite*	m_pTriggerSprite;
 };
 
 #endif // EDITLAYER_H

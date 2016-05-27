@@ -5,7 +5,7 @@ Weapon::Weapon(Vehicle* pVehicle, double dMaxProjectileSpeed)
 	, m_dMaxProjectileSpeed(dMaxProjectileSpeed)
 	, m_pFireRegulator(NULL)
 {
-	m_pFireRegulator = new Regulator(4.0f);
+	m_pFireRegulator = new Regulator(1.0f);
 }
 
 Weapon::~Weapon(void)
