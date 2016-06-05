@@ -568,6 +568,13 @@ void Cmini_hammerView::OnSize(UINT nType, int cx, int cy)
 		//重新设置窗口大小及投影矩阵  
 		CCEGLView::sharedOpenGLView()->resize(tClientRect.Width(),tClientRect.Height());
 		CCDirector::sharedDirector()->reshapeProjection(CCSizeMake(tClientRect.Width(),tClientRect.Height()));
+
+		if (m_bInitCocos2dX)
+		{
+			CCDirector::sharedDirector()->getRunningScene()->setContentSize(CCSizeMake(tClientRect.Width(),tClientRect.Height()));
+			app.getEditLayer()->setContentSize(CCSizeMake(tClientRect.Width(),tClientRect.Height()));
+			app.getSimulationLayer()->setContentSize(CCSizeMake(tClientRect.Width(),tClientRect.Height()));
+		}
 	}
 }
 
