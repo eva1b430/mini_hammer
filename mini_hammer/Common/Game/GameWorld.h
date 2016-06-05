@@ -2,8 +2,8 @@
 #define GAMEWORLD_H
 
 #include "cocos2d.h"
-#include <list>
 #include "2D/Vector2D.h"
+#include <list>
 
 using namespace std;
 using namespace cocos2d;
@@ -12,8 +12,6 @@ using namespace cocos2d;
 class Pathfinder;
 class Vehicle;
 class Projectile;
-// 定义一个智能体容器
-typedef list<Vehicle*> VehicleList;
 class GameWorld
 {
 public:

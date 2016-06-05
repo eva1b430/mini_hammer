@@ -1,6 +1,7 @@
 #include "Pathfinder.h"
 #include "misc/Cgdi.h"
 #include "GraphAlgorithms.h"
+#include "Trigger_HealthGiver.h"
 #include <fstream>
 
 Pathfinder::Pathfinder(void)
@@ -12,7 +13,7 @@ Pathfinder::Pathfinder(void)
 	, m_nHeightItemNum(0)
 	, m_bShowGraph(NULL)
 {
-
+	
 }
 
 
@@ -525,6 +526,11 @@ void Pathfinder::Load(char* FileName)
 				m_pGraph->AddNode(node);
 
 				AddAllNeighboursToGridNodeTrigger(nIndex, yy, xx, m_nWidthItemNum, m_nHeightItemNum);
+
+				if (nTerrainType == emTerrain_HealthGiver)
+				{
+					AddHealthGiver(Vector2D(nPosX, nPosY), 10.0f);
+				}
 			//}
 		}
 		else
@@ -581,4 +587,16 @@ void Pathfinder::CreatePathCostTable( Graph& graph )
 	}
 
 	m_PathCostTable = PathCosts;
+}
+
+void Pathfinder::UpdateTriggerSystem(VehicleList& vehicles)
+{
+	m_TriggerSystem.Update(vehicles);
+}
+
+void Pathfinder::AddHealthGiver(Vector2D pos, double radius)
+{
+	Trigger_HealthGiver* pHealthGiver = new Trigger_HealthGiver(pos, radius);
+	//pHealthGiver->autorelease();
+	m_TriggerSystem.Register(pHealthGiver);
 }

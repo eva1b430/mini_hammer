@@ -2,6 +2,7 @@
 #define PATHFINDER_H
 #include "Graph.h"
 #include "atltypes.h"
+#include "TriggerSystem.h"
 
 #include <list>
 #define GRID_CELL_SIZE 25
@@ -72,6 +73,12 @@ public:
 	// 计算成本表（填充二维数组）
 	void CreatePathCostTable(Graph& graph);
 
+	// 更新触发器
+	void UpdateTriggerSystem(VehicleList& vehicles);
+
+	// 添加某种触发器
+	void AddHealthGiver(Vector2D pos, double radius);
+
 public:
 	// 当前选定的地形元素
 	TerrainItem_Type				m_CurrentTerrainBrush;
@@ -96,5 +103,8 @@ public:
 
 	// 成本表
 	vector<vector<double> >			m_PathCostTable;
+
+	// 触发器
+	TriggerSystem					m_TriggerSystem;
 };
 #endif

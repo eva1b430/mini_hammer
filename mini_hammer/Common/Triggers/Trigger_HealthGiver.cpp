@@ -10,6 +10,7 @@ void Trigger_HealthGiver::Try(Vehicle* pVehicle)
 	if (m_pRegion->isTouching(pVehicle->GetPos(), pVehicle->GetBRadius()))
 	{
 		// 触发内容可以可视化编辑
+		pVehicle->setScale(2.0f);
 
 		// 加血
 

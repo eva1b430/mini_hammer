@@ -2,7 +2,6 @@
 #define BASEENTITY_H
 #include "cocos2d.h"
 #include "2D/Vector2D.h"
-#include "GlobalVar.h"
 
 using namespace cocos2d;
 class BaseEntity : public CCSprite
@@ -61,19 +60,15 @@ public:
 	virtual ~BaseEntity(void);
 
 	// cocos2dx的函数
-	virtual void update(float delta)
+	virtual void update(float delta);
+
+	// 逻辑帧
+	virtual void Update(double time_elapsed);
+
+	// 渲染帧
+	virtual void Render()
 	{
-		// 拦截cocos2dx场景图的逻辑循环
-		return ;
 
-		//CCSprite::update(delta);
-
-		//// 调用子类的
-		//Update(delta);
-
-		//CCSize winSize = CCDirector::sharedDirector()->getWinSize();
-		//Vector2D pos = GetPos();
-		//setPosition(ccp(pos.x, winSize.height - pos.y));
 	}
 
 	virtual void onEnter()
@@ -98,24 +93,6 @@ public:
 	//	Vector2D pos2D = Vector2D(pos.x, pos.y);
 	//	SetPos(pos2D);
 	//}
-
-	// 逻辑帧
-	virtual void Update(double time_elapsed)
-	{
-		// 调用子类的
-		//Update(time_elapsed);
-
-		Vector2D pos = GetPos();
-		setPosition(GlobalVar::instance().HammerPosToCocosPos(pos));
-
-		//CCSprite::update(time_elapsed);
-	}
-
-	// 渲染帧
-	virtual void Render()
-	{
-
-	}
 
 	// 位置控制
 	Vector2D     GetPos()const{return m_vPos;}

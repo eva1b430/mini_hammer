@@ -381,6 +381,27 @@ void Cmini_hammerView::OnLButtonUp(UINT nFlags, CPoint point)
 		if (m_emMode == em_ViewMode_Edit)
 		{
 			pPathFinder->PaintTrigger(point);
+
+			// 绘制触发器
+			CCSprite* pSprite = NULL;
+			if (GlobalVar::instance().GetPathfinder()->m_CurrentTerrainBrush == Pathfinder::emTerrain_HealthGiver)
+			{
+				pSprite = CCSprite::create("media/image/1.png");
+				app.getEditLayer()->addChild(pSprite);
+				pSprite->setPosition(GlobalVar::instance().HammerPosToCocosPos(Vector2D(point.x, point.y)));
+
+				pPathFinder->AddHealthGiver(Vector2D(point.x, point.y), 10.0f);
+			} 
+			else if(GlobalVar::instance().GetPathfinder()->m_CurrentTerrainBrush == Pathfinder::emTerrain_WeaponGiver)
+			{
+				pSprite = CCSprite::create("media/image/2.png");
+				app.getEditLayer()->addChild(pSprite);
+				pSprite->setPosition(GlobalVar::instance().HammerPosToCocosPos(Vector2D(point.x, point.y)));
+			}
+			else
+			{
+				// do nothing
+			}
 		}
 
 		Vehicle* pOwn = NULL;
@@ -389,25 +410,6 @@ void Cmini_hammerView::OnLButtonUp(UINT nFlags, CPoint point)
 		{
 			Vector2D pos = Vector2D(point.x, point.y);
 			pOwn->GetSteering()->SetTarget(pos);
-		}
-
-		// 绘制触发器
-		CCSprite* pSprite = NULL;
-		if (GlobalVar::instance().GetPathfinder()->m_CurrentTerrainBrush == Pathfinder::emTerrain_HealthGiver)
-		{
-			pSprite = CCSprite::create("media/image/1.png");
-			app.getEditLayer()->addChild(pSprite);
-			pSprite->setPosition(GlobalVar::instance().HammerPosToCocosPos(Vector2D(point.x, point.y)));
-		} 
-		else if(GlobalVar::instance().GetPathfinder()->m_CurrentTerrainBrush == Pathfinder::emTerrain_WeaponGiver)
-		{
-			pSprite = CCSprite::create("media/image/2.png");
-			app.getEditLayer()->addChild(pSprite);
-			pSprite->setPosition(GlobalVar::instance().HammerPosToCocosPos(Vector2D(point.x, point.y)));
-		}
-		else
-		{
-			// do nothing
 		}
 	}
 

@@ -57,10 +57,10 @@ void EditLayer::onEnter()
 	scheduleUpdate();
 
 	// ±à¼­±ê¼Ç
-	m_pEditMark = CCSprite::create();
-	addChild(m_pEditMark);
-	m_pEditMark->setOpacity(200);
-	m_pEditMark->setScale(2.0f);
+	m_pTriggerSprite = CCSprite::create();
+	addChild(m_pTriggerSprite);
+	m_pTriggerSprite->setOpacity(200);
+	m_pTriggerSprite->setScale(2.0f);
 }
 
 void EditLayer::onExit()
@@ -105,28 +105,28 @@ void EditLayer::changeEditMark(Pathfinder::TerrainItem_Type emTerrainType)
 	case Pathfinder::emTerrain_HealthGiver:
 		{
 			pTexture = CCTextureCache::sharedTextureCache()->addImage("media/image/1.png");
-			m_pEditMark->setVisible(true);
+			m_pTriggerSprite->setVisible(true);
 
-			if (m_pEditMark)
+			if (m_pTriggerSprite)
 			{
-				m_pEditMark->initWithTexture(pTexture);
+				m_pTriggerSprite->initWithTexture(pTexture);
 			}
 		}
 		break;
 	case Pathfinder::emTerrain_WeaponGiver:
 		{
 			pTexture = CCTextureCache::sharedTextureCache()->addImage("media/image/2.png");
-			m_pEditMark->setVisible(true);
+			m_pTriggerSprite->setVisible(true);
 
-			if (m_pEditMark)
+			if (m_pTriggerSprite)
 			{
-				m_pEditMark->initWithTexture(pTexture);
+				m_pTriggerSprite->initWithTexture(pTexture);
 			}
 		}
 		break;
 	default:
 		{
-			m_pEditMark->setVisible(false);
+			m_pTriggerSprite->setVisible(false);
 		}
 		break;
 	}
@@ -134,9 +134,9 @@ void EditLayer::changeEditMark(Pathfinder::TerrainItem_Type emTerrainType)
 
 void EditLayer::updateEditMarkPosition(CCPoint pos)
 {
-	if (m_pEditMark)
+	if (m_pTriggerSprite)
 	{
-		m_pEditMark->setPosition(pos);
+		m_pTriggerSprite->setPosition(pos);
 	}
 }
 
