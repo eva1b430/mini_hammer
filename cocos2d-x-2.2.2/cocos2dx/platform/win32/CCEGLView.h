@@ -1,4 +1,4 @@
-/****************************************************************************
+﻿/****************************************************************************
 Copyright (c) 2010 cocos2d-x.org
 
 http://www.cocos2d-x.org
@@ -54,7 +54,6 @@ public:
     void setMenuResource(LPCWSTR menu);
     void setWndProc(CUSTOM_WND_PROC proc);
 
-//protected:
     virtual bool Create();
 	virtual bool Create(LPCTSTR pTitle, int w, int h, HWND hWnd);
 public:
@@ -86,6 +85,7 @@ public:
     @brief    get the shared main open gl window
     */
     static CCEGLView* sharedOpenGLView();
+	void Activate();
 
 protected:
 	static CCEGLView* s_pEglView;

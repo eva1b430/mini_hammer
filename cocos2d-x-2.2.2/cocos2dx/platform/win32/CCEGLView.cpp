@@ -1,4 +1,4 @@
-/****************************************************************************
+ï»¿/****************************************************************************
 Copyright (c) 2010 cocos2d-x.org
 
 http://www.cocos2d-x.org
@@ -195,6 +195,11 @@ CCEGLView::~CCEGLView()
 
 }
 
+void CCEGLView::Activate()
+{
+	wglMakeCurrent(m_hDC, m_hRC);
+}
+
 bool CCEGLView::initGL()
 {
     m_hDC = GetDC(m_hWnd);
@@ -341,7 +346,7 @@ bool CCEGLView::Create(LPCTSTR pTitle, int w, int h, HWND hWnd)
 		if(hWnd)  
 		{  
 			m_hWnd = hWnd ;  
-			//ÐÂÔöbool±äÁ¿m_bIsPopupWin£¬ÓÃÓÚ±ê¼ÇÊÇ·ñÊ¹ÓÃÒÑ¾­´´½¨ºÃµÄWINDOWS¿Ø¼þ´°¿Ú¾ä±ú×öÎªµ±Ç°OpenGLÊÓ´°µÄWINDOWS´°¿Ú¾ä±ú
+			//ï¿½ï¿½ï¿½ï¿½boolï¿½ï¿½ï¿½ï¿½m_bIsPopupWinï¿½ï¿½ï¿½ï¿½ï¿½Ú±ï¿½ï¿½ï¿½Ç·ï¿½Ê¹ï¿½ï¿½ï¿½Ñ¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ãµï¿½WINDOWSï¿½Ø¼ï¿½ï¿½ï¿½ï¿½Ú¾ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½Ç°OpenGLï¿½Ó´ï¿½ï¿½ï¿½WINDOWSï¿½ï¿½ï¿½Ú¾ï¿½ï¿½
 			//m_bIsPopupWin = false;  
 		}
 		else
@@ -394,11 +399,11 @@ bool CCEGLView::Create(LPCTSTR pTitle, int w, int h, HWND hWnd)
 			s_pMainWindow = this;
 			bRet = true;
 		}
-		////ÅÐ¶Ï´°¿Ú¾ä±úÓÐÐ§  
+		////ï¿½Ð¶Ï´ï¿½ï¿½Ú¾ï¿½ï¿½ï¿½ï¿½Ð§  
 		//CC_BREAK_IF(! m_hWnd);  
-		////µ÷Õû´°¿Ú´óÐ¡  
+		////ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú´ï¿½Ð¡  
 		//resize(w, h);
-		////³õÊ¼»¯OpenGL  
+		////ï¿½ï¿½Ê¼ï¿½ï¿½OpenGL  
 		//bRet = initGL();  
 		//CC_BREAK_IF(!bRet);  
 		//s_pMainWindow = this;  
@@ -765,10 +770,10 @@ void CCEGLView::setFrameSize(float width, float height)
 
 void CCEGLView::setFrameSize(float width, float height, HWND hWnd)
 {
-	//ÓÉÖ¸¶¨µÄ´óÐ¡ºÍ¾ä±ú´´½¨´°Ìå
+	//ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½Ä´ï¿½Ð¡ï¿½Í¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	Create((LPCTSTR)m_szViewName, (int)width, (int)height, hWnd);
 
-	//µ÷ÓÃ»ùÀàµÄsetFrameSizeº¯³õÊ¼»¯ÕûÆÁÄ»ºÍ·Ö±æÂÊ  
+	//ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½setFrameSizeï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä»ï¿½Í·Ö±ï¿½ï¿½ï¿½  
 	CCEGLViewProtocol::setFrameSize(width, height);
 }
 
